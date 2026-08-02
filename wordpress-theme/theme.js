@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFounderModal();
   initWhatsAppSimulator();
   initDsoCalculator();
+  initJmbtCaseStudyModal();
+  initSampleWorkTemplates();
 });
 
 /* 1. Interactive WhatsApp Simulator Widget */
@@ -202,4 +204,78 @@ function initFounderModal() {
       form.reset();
     });
   }
+}
+
+/* 6. In-Depth JMBT Case Study Reader Modal */
+function initJmbtCaseStudyModal() {
+  const modal = document.getElementById('jmbt-case-study-modal');
+  if (!modal) return;
+
+  const openBtns = document.querySelectorAll('.open-jmbt-modal');
+  const closeBtns = document.querySelectorAll('.close-jmbt-modal');
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+}
+
+/* 7. Interactive Sample Work Template Toggles */
+function initSampleWorkTemplates() {
+  const buttons = document.querySelectorAll('.sample-tpl-btn');
+  const display = document.getElementById('sample-tpl-display');
+  if (!display) return;
+
+  const templates = {
+    'ledger': `
+      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Official WABA Template: ledger_personal_remind]</div>
+      Pranam {{1}} ji 🙏<br><br>
+      Jai Maa Bhagwati Traders ledger update as of {{2}}:<br>
+      • Pending Balance: ₹{{3}}<br>
+      • Due Date: {{4}}<br><br>
+      Please review your itemized invoice and complete payment via verified UPI link:<br>
+      {{5}}<br><br>
+      <em>Reply "DISPUTE" if goods were damaged or if payment was already made.</em>
+    `,
+    'ack': `
+      <div style="color: var(--accent-emerald); font-weight: 600; margin-bottom: 0.5rem;">[Official WABA Template: payment_receipt_ack]</div>
+      Dhanyawad {{1}} ji! 🙏<br><br>
+      We have received your payment of ₹{{2}} against Invoice #{{3}} on {{4}}.<br>
+      Your updated ledger balance is now: ₹{{5}}.<br><br>
+      Thank you for your continued partnership with Jai Maa Bhagwati Traders.
+    `,
+    'dispute': `
+      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Smart HITL Engine Alert: dispute_pause_logged]</div>
+      [SYSTEM LOG] Account #{{1}} ({{2}}) flagged active dispute: "{{3}}".<br>
+      • Automated Dunning: INSTANTLY PAUSED<br>
+      • Telemetry Status: Routed to Owner Review Queue (`SOUL.md` Rule 4B)<br>
+      • 0 automated messages dispatched until manual owner clearance.
+    `
+  };
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const tplKey = btn.getAttribute('data-tpl');
+      if (templates[tplKey]) {
+        display.innerHTML = templates[tplKey];
+      }
+    });
+  });
 }
