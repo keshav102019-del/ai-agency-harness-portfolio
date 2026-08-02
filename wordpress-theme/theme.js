@@ -1,5 +1,5 @@
 /* ==========================================================================
-   WORDPRESS THEME INTERACTIVE CONTROLLERS
+   10/10 WORLD-CLASS INTERACTIVE WIDGET CONTROLLERS
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDsoCalculator();
 });
 
+/* 1. Interactive WhatsApp Simulator Widget */
 function initWhatsAppSimulator() {
   const simBtns = document.querySelectorAll('.sim-btn');
   const chatDisplay = document.getElementById('chat-simulator-display');
@@ -51,6 +52,7 @@ Replies are anchored to your official ledger.</div>
   });
 }
 
+/* 2. Interactive DSO & ROI Calculator Widget */
 function initDsoCalculator() {
   const amountSlider = document.getElementById('calc-amount-slider');
   const dsoSlider = document.getElementById('calc-dso-slider');
@@ -68,8 +70,11 @@ function initDsoCalculator() {
     amountValLabel.textContent = `₹${amountInLakhs.toFixed(1)} Lakhs`;
     dsoValLabel.textContent = `${currentDsoDays} Days`;
 
+    // Calculation logic: Harness reduces DSO by average 40%
     const reducedDays = Math.round(currentDsoDays * 0.4);
     const newDsoDays = currentDsoDays - reducedDays;
+    
+    // Cash unlocked = (Amount / DSO) * Reduced Days
     const cashUnlockedInLakhs = (amountInLakhs / currentDsoDays) * reducedDays;
 
     unlockedCashLabel.textContent = `₹${cashUnlockedInLakhs.toFixed(2)} Lakhs`;
@@ -83,6 +88,7 @@ function initDsoCalculator() {
   }
 }
 
+/* 3. File Inspector Tabs */
 function initInspectorTabs() {
   const tabs = document.querySelectorAll('.inspector-tab');
   const codeDisplay = document.getElementById('inspector-code-display');
@@ -145,6 +151,7 @@ function initInspectorTabs() {
   });
 }
 
+/* 4. FAQ Accordion */
 function initFaqAccordion() {
   const faqCards = document.querySelectorAll('.faq-card');
 
@@ -160,6 +167,7 @@ function initFaqAccordion() {
   });
 }
 
+/* 5. Founder Booking Modal */
 function initFounderModal() {
   const modal = document.getElementById('founder-modal');
   const triggerBtns = document.querySelectorAll('.open-modal');
@@ -179,13 +187,11 @@ function initFounderModal() {
     });
   }
 
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
-  }
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
 
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -197,6 +203,7 @@ function initFounderModal() {
   }
 }
 
+/* 6. Live Telemetry Ticker */
 function initTelemetryTicker() {
   const textEl = document.getElementById('live-ticker');
   const items = [
