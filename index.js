@@ -1,48 +1,48 @@
 /* ==========================================================================
-   INTERACTIVE APPLICATION LOGIC & CONTROLLERS
+   INTERACTIVE CONTROLLERS — FOUNDER MANIFESTO & HARNESS STUDIO
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initFilePlayground();
+  initPlayground();
   initFaqAccordion();
-  initModalBooking();
-  initLiveTickerSimulation();
+  initBookingModal();
+  initTelemetryTicker();
 });
 
-/* 1. Interactive File Playground Tabs */
-function initFilePlayground() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const codeDisplay = document.getElementById('code-display');
+/* 1. Code & File Playground Switcher */
+function initPlayground() {
+  const tabs = document.querySelectorAll('.playground-tab');
+  const codeViewer = document.getElementById('code-viewer');
 
-  const fileContents = {
+  const files = {
     'AGENTS.md': `/* ==========================================================================
    AGENTS.md — Universal Identity & Guardrail Layer (Layer 1)
    ========================================================================== */
 
-# IMMUTABLE CONTRACT
+# IMMUTABLE SOVEREIGN CONTRACT
 - Role: Deterministic Revenue & Ledger Automation Agent
-- Engine: 100% Meta Official WhatsApp Business API
-- Golden Rule 1: NEVER guess or hallucinate currency figures or invoice totals.
-- Golden Rule 2: All actions must anchor to verified database events.
-- Golden Rule 3: Disputed client ledgers must trigger immediate Smart HITL Pause.
+- Engine: 100% Meta Official WhatsApp Business API (Direct WABA Cloud Key)
+- Rule 1: NEVER guess or hallucinate currency figures or ledger balances.
+- Rule 2: All automation triggers must anchor to verified database events.
+- Rule 3: Disputed client accounts trigger immediate Smart HITL Pause.
 
-## TRUST BOUNDARIES
-- Allowed Actions: Read ledger balances, dispatch Meta-approved utility templates.
-- Restricted Actions: Cannot issue direct discounts, modify core accounts without owner key.`,
+## TRUST & DATA BOUNDARIES
+- Allowed: Read ledger balances, dispatch Meta-approved utility templates.
+- Forbidden: Cannot issue unauthorized discounts or modify core accounts without owner key.`,
 
     'SOUL.md': `/* ==========================================================================
    SOUL.md — Reference Business Policies & Blacklists (Layer 4)
    ========================================================================== */
 
 # BUSINESS POLICIES & RECONCILIATION RULES
-- Company: Jai Maa Bhagwati Traders (JMBT)
+- Target Enterprise: Jai Maa Bhagwati Traders (JMBT)
 - Total Active Clients: 1,181
 - Granular Pillars: 6 (Very High Dues to Zero Balance)
 
-## BLACKLIST & SMART PAUSE RULES
+## SMART PAUSE & BLACKLIST RULES
 - Rule 4B: If client has active goods dispute or payment promise within 30 days -> PAUSE.
-- Active Paused Clients: 92 clients (₹2,59,440.25 total) awaiting human reconciliation.
-- Blacklisted Contacts: Chacha Sanoj Sah (+918051718919) -> Manual Human Review Only.`,
+- Active Paused Clients: 92 clients (₹2,59,440.25 total) isolated for human review.
+- Blacklisted Contact: Chacha Sanoj Sah (+918051718919) -> Manual Human Review Only.`,
 
     'contract.schema.json': `{
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -65,81 +65,83 @@ function initFilePlayground() {
       tab.classList.add('active');
 
       const fileName = tab.getAttribute('data-file');
-      if (fileContents[fileName]) {
-        codeDisplay.textContent = fileContents[fileName];
+      if (files[fileName]) {
+        codeViewer.textContent = files[fileName];
       }
     });
   });
 }
 
-/* 2. FAQ Accordion */
+/* 2. FAQ Accordion Controller */
 function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
+  const faqRows = document.querySelectorAll('.faq-row');
 
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      faqItems.forEach(i => i.classList.remove('active'));
+  faqRows.forEach(row => {
+    const btn = row.querySelector('.faq-btn');
+    btn.addEventListener('click', () => {
+      const isActive = row.classList.contains('active');
+      faqRows.forEach(r => r.classList.remove('active'));
       if (!isActive) {
-        item.classList.add('active');
+        row.classList.add('active');
       }
     });
   });
 }
 
-/* 3. Booking Modal */
-function initModalBooking() {
-  const modal = document.getElementById('booking-modal');
-  const openBtns = document.querySelectorAll('.open-modal-btn');
-  const closeBtn = document.querySelector('.modal-close');
-  const bookingForm = document.getElementById('booking-form');
+/* 3. Modal Booking Form Controller */
+function initBookingModal() {
+  const modalBg = document.getElementById('booking-modal-bg');
+  const triggerBtns = document.querySelectorAll('.open-modal-trigger');
+  const closeBtn = document.querySelector('.modal-close-btn');
+  const bookingForm = document.getElementById('audit-booking-form');
 
-  openBtns.forEach(btn => {
+  triggerBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
+      modalBg.classList.add('active');
     });
   });
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
+      modalBg.classList.remove('active');
     });
   }
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
+  if (modalBg) {
+    modalBg.addEventListener('click', (e) => {
+      if (e.target === modalBg) {
+        modalBg.classList.remove('active');
+      }
+    });
+  }
 
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Thank you! Your Problem Audit Request has been submitted. We will analyze your workflow and contact you within 4 hours.');
-      modal.classList.remove('active');
+      alert('Thank you! Your Problem Audit Request has been received. The founder will personally review your workflow and contact you within 4 hours.');
+      modalBg.classList.remove('active');
       bookingForm.reset();
     });
   }
 }
 
-/* 4. Live Telemetry Simulation Ticker */
-function initLiveTickerSimulation() {
-  const telemetryElement = document.getElementById('live-telemetry');
-  const events = [
-    "[WABA Cloud API] Dispatched ledger_personal_remind to +9198*** -> Status: DELIVERED (200 OK)",
+/* 4. Telemetry Ticker Simulation */
+function initTelemetryTicker() {
+  const tickerEl = document.getElementById('live-ticker-text');
+  const logs = [
+    "[Meta WABA Official API] Dispatched ledger_personal_remind to +9198*** -> Status: DELIVERED (200 OK)",
     "[Schema Gate] Validation PASSED for client_id #4102 | total_owed: ₹15,711.00",
     "[HITL Engine] Client #92 (Chacha Sanoj Sah) PAUSED -> Active Dispute Flagged",
     "[System Lock] Lock 'dispatch_run_8492' verified -> 0 duplicate messages sent",
     "[Telemetry Reconcile] ₹23,422.00 payment webhook received -> Client ledger updated"
   ];
 
-  let index = 0;
-  if (telemetryElement) {
+  let i = 0;
+  if (tickerEl) {
     setInterval(() => {
-      index = (index + 1) % events.length;
-      telemetryElement.textContent = events[index];
-    }, 4000);
+      i = (i + 1) % logs.length;
+      tickerEl.textContent = logs[i];
+    }, 4500);
   }
 }
