@@ -30,7 +30,7 @@ get_header(); ?>
       <div style="display: flex; align-items: center; gap: 1rem; color: #94A3B8; font-size: 0.8rem;">
         <span>Free Direct Meta Keys: <strong style="color: var(--accent-emerald-bright);">0% Markup Tax</strong></span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">00:15:09</span>
+        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">00:17:58</span>
       </div>
     </div>
   </div>
@@ -51,10 +51,12 @@ get_header(); ?>
         <a href="#comparison" class="nav-link">Competitor Teardown</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
-      <a href="#audit" class="btn-cta open-modal">
-        <span>Book 15-Min Audit</span>
-        <span style="font-size: 1.1rem;">&rarr;</span>
-      </a>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <a href="#audit" class="btn-cta open-modal btn-gold-prominent">
+          <span>Hire Keshav / Book Free Audit</span>
+          <span style="font-size: 1.1rem;">&rarr;</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -84,9 +86,14 @@ get_header(); ?>
         Everyone on the internet is marketing AI—claiming <em>"AI can automate everything."</em> But when it comes to real business tasks, AI agents hallucinate, cascade into bugs, and fail. We engineer <strong>Custom Agent Harnesses</strong> for WhatsApp Business API and Email Revenue Operations—deployed 24/7 on dedicated VPS with <strong>100% local sovereign data storage, zero cloud leaks, and a 30-Day Co-Deployed Output Guarantee</strong>.
       </p>
 
-      <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; margin-bottom: 4rem;">
-        <a href="#audit" class="btn-cta open-modal" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">Book 15-Minute Operational Audit &rarr;</a>
-        <a href="#case-study-jmbt" class="btn-cta-secondary" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">Read JMBT Patna Case Study ↓</a>
+      <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; margin-bottom: 4rem; flex-wrap: wrap;">
+        <a href="#audit" class="btn-cta open-modal btn-gold-prominent" style="padding: 1.25rem 2.75rem; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(180, 131, 70, 0.35);">
+          <span>⚡ Hire Me / Book Free 15-Min Audit</span>
+          <span style="font-size: 1.2rem;">&rarr;</span>
+        </a>
+        <a href="#audit" class="btn-cta-secondary open-modal" style="padding: 1.25rem 2.5rem; font-size: 1.05rem; background: #FFFFFF; border-color: var(--accent-gold); color: var(--text-primary);">
+          <span>💬 Talk To Us / WhatsApp Audit</span>
+        </a>
       </div>
 
       <!-- Hero Visual Showcase -->
@@ -301,7 +308,7 @@ get_header(); ?>
           </p>
 
           <div style="text-align: center; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border-light);">
-            <a href="#audit" class="btn-cta open-modal" style="font-size: 1.1rem; padding: 1.25rem 3rem;">Schedule A 15-Minute Operational Audit &rarr;</a>
+            <a href="#audit" class="btn-cta open-modal btn-gold-prominent" style="font-size: 1.1rem; padding: 1.25rem 3rem;">Hire Keshav / Schedule Audit &rarr;</a>
           </div>
 
         </div>
@@ -566,10 +573,17 @@ get_header(); ?>
       <p style="color: var(--text-secondary); max-width: 660px; margin: 0 auto 2.75rem; font-size: 1.15rem;">
         We limit monthly partner intake to 2 companies to ensure dedicated custom engineering and zero-error deployment.
       </p>
-      <button class="btn-cta open-modal" style="font-size: 1.15rem; padding: 1.25rem 3.25rem;">Book 15-Minute Audit &rarr;</button>
+      <button class="btn-cta open-modal btn-gold-prominent" style="font-size: 1.2rem; padding: 1.35rem 3.5rem;">⚡ Hire Me / Book Free Audit &rarr;</button>
     </section>
 
   </main>
+
+  <!-- Sticky Bottom CTA Bar for Mobile Devices -->
+  <div class="sticky-mobile-cta">
+    <a href="#audit" class="btn-cta open-modal btn-gold-prominent" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.9rem 1.5rem;">
+      <span>⚡ Hire Me / Book Free Audit &rarr;</span>
+    </a>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -607,7 +621,7 @@ get_header(); ?>
             <input type="text" id="audit-company" class="form-input" placeholder="e.g. Acme Wholesale (B2B Distribution)" required>
           </div>
 
-          <button type="button" id="wizard-btn-step1-next" class="btn-cta" style="width: 100%; margin-top: 1rem;">Next: Bottleneck Assessment &rarr;</button>
+          <button type="button" id="wizard-btn-step1-next" class="btn-cta btn-gold-prominent" style="width: 100%; margin-top: 1rem;">Next: Bottleneck Assessment &rarr;</button>
         </div>
 
         <!-- STEP 2: Bottleneck Assessment -->
@@ -630,7 +644,7 @@ get_header(); ?>
 
           <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
             <button type="button" id="wizard-btn-step2-prev" class="btn-cta-secondary" style="flex: 1;">&larr; Back</button>
-            <button type="button" id="wizard-btn-step2-next" class="btn-cta" style="flex: 2;">Next: Contact Details &rarr;</button>
+            <button type="button" id="wizard-btn-step2-next" class="btn-cta btn-gold-prominent" style="flex: 2;">Next: Contact Details &rarr;</button>
           </div>
         </div>
 
@@ -648,7 +662,7 @@ get_header(); ?>
 
           <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
             <button type="button" id="wizard-btn-step3-prev" class="btn-cta-secondary" style="flex: 1;">&larr; Back</button>
-            <button type="submit" class="btn-cta" style="flex: 2;">Submit Audit Request &rarr;</button>
+            <button type="submit" class="btn-cta btn-gold-prominent" style="flex: 2;">Submit Audit Request &rarr;</button>
           </div>
         </div>
 
