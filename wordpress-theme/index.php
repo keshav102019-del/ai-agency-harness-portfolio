@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Template File for WordPress Theme
+ * Main Template File for Harness Studio WordPress Theme
  *
  * @package HarnessStudio
  */
@@ -12,25 +12,25 @@ get_header(); ?>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php wp_title( '|', true, 'right' ); ?> The Truth About AI Automation | Founder Manifesto</title>
+  <title><?php wp_title( '|', true, 'right' ); ?> Agent Harness Studio | Custom AI Agent Architecture & JMBT Case Study</title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
-  <!-- Glow Background Spotlight -->
-  <div class="glow-spotlight-top"></div>
-
-  <!-- Top Live Notice Bar -->
+  <!-- Top System Status Ticker -->
   <div class="top-notice-bar">
     <div class="container-wide notice-flex">
-      <div>
-        <span class="live-badge"><span class="pulse"></span> DIRECT META WABA CLOUD API</span>
-        <span id="live-ticker" style="margin-left: 0.75rem; font-family: var(--font-mono);">
-          [Meta WABA Cloud API] Dispatched ledger_personal_remind -> Status: DELIVERED (200 OK)
-        </span>
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <span class="live-badge"><span class="pulse"></span> DIRECT META CLOUD API: 100% OPERATIONAL</span>
+        <span style="color: rgba(255, 255, 255, 0.4);">|</span>
+        <span style="color: #94A3B8; font-size: 0.825rem;">Render Queue Sync: <strong style="color: #F8FAFC;">Active</strong></span>
+        <span style="color: rgba(255, 255, 255, 0.4);">|</span>
+        <span style="color: #94A3B8; font-size: 0.825rem;">Sovereign Architecture: <strong style="color: var(--accent-gold-bright);">ICM + OKF Governed</strong></span>
       </div>
-      <div>
-        <span style="color: var(--accent-gold); font-weight: 600;">🎁 Free Direct Meta API Key Setup Included</span>
+      <div style="display: flex; align-items: center; gap: 1rem; color: #94A3B8; font-size: 0.8rem;">
+        <span>Free Direct Meta Keys: <strong style="color: var(--accent-emerald-bright);">0% Markup Tax</strong></span>
+        <span style="color: rgba(255, 255, 255, 0.4);">|</span>
+        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">23:33:00</span>
       </div>
     </div>
   </div>
@@ -40,214 +40,461 @@ get_header(); ?>
     <div class="container-wide header-flex">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo">
         <div class="brand-icon">AH</div>
-        <span style="color: #fff;">HARNESS</span><span style="color: var(--accent-gold);">STUDIO</span>
+        <span style="color: var(--text-primary);">HARNESS</span><span style="color: var(--accent-gold);">STUDIO</span>
       </a>
-      <a href="#audit" class="btn-cta open-modal">Talk To The Founder</a>
+      <nav style="display: flex; gap: 1.75rem; align-items: center; font-size: 0.925rem; font-weight: 500;">
+        <a href="#hero-story" class="nav-link">The Truth About AI</a>
+        <a href="#failures" class="nav-link">4 AI Failure Modes</a>
+        <a href="#case-study-jmbt" class="nav-link">Father's Story</a>
+        <a href="#playground" class="nav-link">Live Playground</a>
+        <a href="#comparison" class="nav-link">Competitor Teardown</a>
+        <a href="#calculator" class="nav-link">ROI Calculator</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="#audit" class="btn-cta open-modal">
+        <span>Book 15-Min Audit</span>
+        <span style="font-size: 1.1rem;">&rarr;</span>
+      </a>
     </div>
   </header>
 
-  <!-- Editorial Main Container -->
-  <main class="container-editorial">
+  <main class="container-wide">
 
-    <!-- Hero Letter Header -->
-    <section class="editorial-hero">
-      <span class="kicker">// A PERSONAL LETTER TO REAL BUSINESS OPERATORS</span>
+    <!-- HERO SECTION: The Founder Manifesto -->
+    <section id="hero-story" class="hero-section">
+      <div class="kicker-pill">
+        <span>🟢 WHY AGENTS FAIL IN REAL BUSINESS</span>
+        <span>•</span>
+        <span>WE SELL DESIRED OUTPUT, NOT AI SLOP</span>
+      </div>
+
       <h1 class="main-headline">
-        "Everyone Says AI Is The Future. But The Moment You Ask It To Do One Simple Thing For Your Business, <span>It Gives You Hallucination and AI Slop."</span>
+        "Everyone Says AI Can Automate Everything. But The Moment You Ask An Agent To Manage Real Business Ledgers, <span>It Gives You Hallucinations, Bug Cascades, and AI Slop."</span>
       </h1>
 
-      <div class="byline">
+      <div class="byline-wrap">
         <div class="author-img">AH</div>
-        <div>
-          <div style="color: #fff; font-weight: 700; font-size: 1.05rem;">By The Founder, Agent Harness Studio</div>
-          <div style="font-size: 0.85rem;">Battle-Tested AI Practitioner | 1 Year First-Principles ICM Research</div>
+        <div style="text-align: left;">
+          <div style="color: var(--text-primary); font-weight: 700; font-size: 1.05rem;">By Keshav Kumar, Son & System Architect</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">For Manoj Kumar (Founder, Jai Maa Bhagwati Traders, Patna)</div>
         </div>
       </div>
 
-      <p style="font-size: 1.25rem; color: #f1f5f9; font-weight: 500;">
-        Look around the internet right now. It is completely full of AI slop and hype.
+      <p style="font-size: 1.25rem; color: var(--text-primary); font-weight: 400; max-width: 880px; margin: 0 auto 3rem; line-height: 1.85;">
+        I watched my father Manoj Kumar struggle every day running <em>Jai Maa Bhagwati Traders (JMBT)</em>—his wholesale cement, TMT steel rod, and pipe business in Patna. Across the region, over <strong>1,181 retail contractors and dealers</strong> maintained continuous rolling credit balances. 
+        <br><br>
+        Paying ₹30,000 to ₹50,000/month for account managers was a heavy burden, so we turned to AI. For 3 grueling months, I sat at my laptop fixing bug after bug. I learned the hard way what the internet won't tell you: <strong>AI agents are fundamentally built to guess.</strong> In a real business with 5 to 10 years of financial data, one single AI hallucination triggers a <strong>catastrophic bug cascade</strong>—fixing 1 error creates 3 new ones. Token costs explode, and your father is left asking, <em>"What the hell is going on here?"</em>
+        <br><br>
+        That’s when I stopped building generic agents and engineered a <strong>Custom Agent Harness</strong> combining ICM (Interpretable Context Methodology) and OKF (Open Knowledge Format). We unblocked cash flow, saved ₹50k/mo on staff, and eliminated hallucinations completely—with 0 Meta bans.
       </p>
 
-      <p>
-        You watch YouTubers in suits tell you <em>"AI will automate everything."</em> You buy their courses, pay for domain hosting, subscribe to different AI SaaS tools, and hire freelancers for ₹10,000.
-      </p>
-
-      <p>
-        But the moment a customer sends a typo, asks about a pending invoice, or requests a ledger update — your bot crashes, sends a fake discount, angers your VIP buyer, or gets your primary WhatsApp business number <strong>permanently banned by Meta</strong>.
-      </p>
-
-      <div class="editorial-callout">
-        <p>
-          "I know this because I suffered through every single one of those traps myself. Here is the real story of how I stopped listening to fake gurus, learned that Context Is God, and engineered a deterministic 5-Layer Agent Harness that restored ₹72.42 Lakhs with zero Meta bans."
-        </p>
+      <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; margin-bottom: 4rem;">
+        <a href="#case-study-jmbt" class="btn-cta" style="padding: 1.1rem 2.4rem; font-size: 1rem;">Read Full JMBT Patna Story ↓</a>
+        <a href="#playground" class="btn-cta-secondary" style="padding: 1.1rem 2.4rem; font-size: 1rem;">Test Live Engine Playground ↓</a>
       </div>
 
-      <!-- Hero Visual Asset -->
+      <!-- Hero Visual Showcase -->
       <div class="hero-image-wrap">
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/waba_dashboard.png' ); ?>" alt="Meta WABA Agent Harness Live Dashboard">
       </div>
     </section>
 
-    <!-- Story Block 1: The YouTube Guru Trap -->
-    <section class="story-block">
-      <h2 class="story-heading">1. Trapped in the "YouTube AI Guru" Hype Cycle</h2>
-      
-      <p>
-        When I first wanted to automate my business operations, I thought: <em>"Okay, I'll search the internet and do it myself for free."</em>
-      </p>
-
-      <p>
-        I saw hundreds of YouTubers saying <em>"Do this, do that, build an AI automation agency in 24 hours."</em> Every single person had a different opinion. But after months of watching their videos and buying their courses, I realized one shocking thing:
-      </p>
-
-      <p style="font-size: 1.25rem; color: var(--accent-gold); font-weight: 700;">
-        Nobody actually did it. None of them built a working system for a real business.
-      </p>
-
-      <p>
-        They were not AI experts. <strong>They were YouTubers selling affiliate links.</strong>
-      </p>
-
-      <p>
-        They sell domain hosting plans, promote affiliate SaaS subscriptions, sell $500 courses, and pitch generic automation templates. I fell right into their trap. I bought their courses, paid for website domain plans, subscribed to different AI SaaS tools, and tried putting AI into my business.
-      </p>
-
-      <p>
-        <strong>And every single thing failed.</strong>
-      </p>
-    </section>
-
-    <!-- Story Block 2: The WhatsApp & Meta API Nightmare -->
-    <section class="story-block">
-      <h2 class="story-heading">2. The WhatsApp API & Account Ban Nightmare</h2>
-
-      <p>
-        Then came the real test: I needed to automate my WhatsApp business to reach my clients and collect outstanding payment ledgers.
-      </p>
-
-      <p>
-        Doing it myself was incredibly complex. Navigating Meta's developer portals, setting up system users, configuring webhooks, and getting permanent access tokens felt impossible.
-      </p>
-
-      <p>
-        Then I saw third-party software platforms promising <em>"Easy WhatsApp API setup."</em> I signed up, connected my business number through their software...
-      </p>
-
-      <div class="disaster-box">
-        <h4>🚨 THE DISASTER: META PERMANENTLY BANNED MY BUSINESS NUMBER</h4>
-        <p style="color: #cbd5e1; margin-bottom: 0;">
-          It turned out that software was not using Meta's Official API. They were using unapproved browser scrapers. Meta's automated security system detected the unauthorized connection and <strong>permanently banned my primary WhatsApp business number</strong>. Years of client history and trust vanished in one second.
-        </p>
-      </div>
-
-      <p>
-        Desperate for a fix, I paid ₹5,000 to ₹10,000 to freelancers selling n8n and Zapier workflows.
-      </p>
-
-      <p>
-        That failed too. Their n8n scenarios broke every single time a client typed a typo, sent an emoji, or asked a question outside their rigid flowchart.
-      </p>
-    </section>
-
-    <!-- Story Block 3: The Hallucination Nightmare -->
-    <section class="story-block">
-      <h2 class="story-heading">3. The 30-Day AI Hallucination Horror</h2>
-
-      <p>
-        I decided to build an AI agent myself. But because I didn't know how to manage AI context properly, the agent went completely wild:
-      </p>
-
-      <ul style="list-style: none; margin-bottom: 1.5rem; padding-left: 0;">
-        <li style="margin-bottom: 0.75rem; color: #f87171;">❌ It ignored my business rules and hallucinated random invoice amounts.</li>
-        <li style="margin-bottom: 0.75rem; color: #f87171;">❌ It sent wrong payment reminders to my top VIP buyers, making them furious.</li>
-        <li style="margin-bottom: 0.75rem; color: #f87171;">❌ It spammed clients with duplicate messages and deleted/corrupted ledger data.</li>
-      </ul>
-
-      <p>
-        For a full month, I was deeply frustrated with AI agents. 90% of what people were selling on the internet was pure junk and failure.
-      </p>
-
-      <!-- Live Interactive WhatsApp Simulator Widget -->
-      <div class="simulator-box">
-        <h4 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 0.5rem;">📱 Interactive Simulator: Flaky Bot vs Verified Harness</h4>
-        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-          Click the scenarios below to see how a generic AI bot fails vs how our verified WABA Harness executes:
-        </p>
-
-        <div class="simulator-grid">
+    <!-- PROOF METRICS BAR -->
+    <section class="proof-bar">
+      <div class="proof-card">
+        <div class="proof-grid">
           <div>
-            <button class="sim-btn active" data-scenario="flaky">🔴 Scenario A: Flaky AI Bot (Hallucination)</button>
-            <button class="sim-btn" data-scenario="waba_harness">🟢 Scenario B: Verified WABA Harness (0% Error)</button>
-            <button class="sim-btn" data-scenario="disputed">⚡ Scenario C: Disputed Client (Smart HITL Pause)</button>
+            <div class="proof-val counter-val" data-target="72.42" data-prefix="₹" data-suffix="L+" style="color: var(--accent-gold);">₹72.42L+</div>
+            <div class="proof-label">Trapped Receivables Recovered</div>
           </div>
-          <div class="chat-screen" id="chat-simulator-display">
-            <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
-            <div class="chat-bubble chat-out" style="background: #7f1d1d;">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
-            <div class="chat-bubble chat-in" style="color: #f87171;">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
+          <div>
+            <div class="proof-val counter-val" data-target="1181" data-prefix="" data-suffix=" Ledgers" style="color: var(--text-primary);">1,181 Ledgers</div>
+            <div class="proof-label">Active Client Ledgers Tracked</div>
+          </div>
+          <div>
+            <div class="proof-val counter-val" data-target="50000" data-prefix="₹" data-suffix="/mo" style="color: var(--accent-emerald);">₹50k/mo</div>
+            <div class="proof-label">Saved On Manager Salaries</div>
+          </div>
+          <div>
+            <div class="proof-val counter-val" data-target="0" data-prefix="" data-suffix=" Bans" style="color: var(--accent-emerald);">0 Bans</div>
+            <div class="proof-label">100% Direct Meta WABA API</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Story Block 4: The ICM Breakthrough -->
-    <section class="story-block">
-      <h2 class="story-heading">4. The Breakthrough: "Context Is God" & ICM Protocol</h2>
+    <!-- SECTION 1: THE 4 REAL FAILURES OF BUSINESS AI & AUTOMATION -->
+    <section id="failures" class="section-wrap">
+      <h2 class="section-title">The 4 Failure Modes of Business AI</h2>
+      <p class="section-sub">Why accuracy is the ultimate bottleneck and why off-the-shelf SaaS tools, n8n flowcharts, and agencies break in real business environments.</p>
 
-      <p>
-        I stopped listening to YouTubers and studied <strong>Interpretable Context Methodology (ICM)</strong> from first principles.
-      </p>
+      <div class="bento-grid-2col" style="margin-bottom: 2.5rem;">
+        <div class="bento-card">
+          <span class="bento-badge badge-red">FAILURE MODE 01</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">1. The Accuracy Bottleneck & Confident Hallucinations</h4>
+          <p style="font-size: 0.975rem; color: var(--text-secondary);">
+            <em>"My biggest fear isn't that AI fails—it's <strong>confident hallucinations</strong>. The AI does the wrong thing with supreme confidence."</em>
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
+            General-purpose LLMs are probabilistic. In a business with financial ledgers, a 95% accuracy rate means 5% catastrophic failure. One wrong balance message fires duplicate spams 20 to 30 times, triggering a <strong>bug cascade</strong> where fixing 1 error creates 3 new ones.
+          </p>
+        </div>
 
-      <p>
-        I learned the single most important rule in artificial intelligence:
-      </p>
+        <div class="bento-card">
+          <span class="bento-badge badge-red">FAILURE MODE 02</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">2. The 3-Month Laptop Headache & Hidden Maintenance</h4>
+          <p style="font-size: 0.975rem; color: var(--text-secondary);">
+            <em>"The subscription cost isn't what kills you—<strong>the real cost is the hidden maintenance</strong>."</em>
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
+            Building unconstrained agents forces you to sit at your laptop every day. Input token costs run away ($400/month for $50 worth of output), latency delays messages, and the workflow becomes so complex that non-technical founders and staff cannot understand or use it.
+          </p>
+        </div>
+      </div>
 
-      <div class="editorial-callout" style="border-color: var(--accent-emerald); background: var(--accent-emerald-soft);">
-        <p style="color: #ffffff; font-weight: 700;">
-          "CONTEXT IS GOD. If you do not tightly govern the AI's context window with structured, sovereign files before execution, the model WILL hallucinate."
+      <div class="bento-grid-2col">
+        <div class="bento-card">
+          <span class="bento-badge badge-red">FAILURE MODE 03</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">3. The "One-Size-Fits-All" Agency & n8n House of Cards</h4>
+          <p style="font-size: 0.975rem; color: var(--text-secondary);">
+            <em>"90% of AI agencies sell <strong>demos with a payment form</strong>. Complex n8n flowcharts are a <strong>house of cards</strong>."</em>
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
+            Freelancers charging ₹10,000 to ₹50,000 sell the exact same generic n8n/Zapier template to everyone. They don't understand your business, your credit terms, or your promise dates. One API update or client typo shatters the entire workflow, and the freelancer ghosts you.
+          </p>
+        </div>
+
+        <div class="bento-card" style="border-color: var(--border-red); background: rgba(239, 68, 68, 0.02);">
+          <span class="bento-badge badge-red">FAILURE MODE 04</span>
+          <h4 style="font-size: 1.3rem; color: var(--accent-red); margin-bottom: 0.85rem;">4. WhatsApp Scraper Account Bans & Middleman Markup Taxes</h4>
+          <p style="font-size: 0.975rem; color: var(--text-secondary);">
+            <em>"Using unofficial scrapers got our 10-year-old business WhatsApp line permanently banned."</em>
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
+            Unapproved browser scrapers (WAHA, Baileys, Selenium) are detected by Meta's network layer, resulting in <strong>permanent account bans</strong> that wipe out years of customer history and trust. Meanwhile, third-party SaaS platforms (Wati, AiSensy) charge steep monthly subscriptions plus a 10%–39% markup tax on Meta messages.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout-card">
+        <p>
+          "Don't pitch me AI. Pitch me a solution to a R.U.D.E. problem (Recognized, Urgent, Deep, Emotional). After burning cash and losing our WhatsApp number to a scraper bot, I learned: CONTEXT IS GOD. When you govern context tightly with sovereign files, hallucinations vanish completely."
         </p>
       </div>
-
-      <!-- Harness Architecture Image -->
-      <div class="hero-image-wrap">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/harness_architecture.png' ); ?>" alt="5-Layer Agent Harness Architecture Diagram">
-      </div>
-
-      <p>
-        I built an <strong>Agent Harness</strong> based on the 5-Layer Context Hierarchy:
-      </p>
-
-      <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem; color: #cbd5e1;">
-        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-gold);">Layer 1 (`AGENTS.md`)</strong>: Universal guardrails & immutable trust boundaries.</li>
-        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-gold);">Layer 2 (`CONTEXT.md`)</strong>: Master pipeline routing across stages.</li>
-        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-gold);">Layer 3 (`contract.schema.json`)</strong>: Hard mathematical gates (0% numeric error tolerance).</li>
-        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-gold);">Layer 4 (`SOUL.md`)</strong>: Business rules, policies, and Smart HITL Pause blacklists.</li>
-        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-gold);">Layer 5 (Telemetry)</strong>: Anchoring all actions to empirical database events.</li>
-      </ol>
-
-      <p>
-        The AI was physically blocked from guessing numbers or acting on unvalidated text. <strong>And suddenly, the system started giving 100% accurate results.</strong>
-      </p>
     </section>
 
-    <!-- Story Block 5: The FREE Meta API Key Gift -->
-    <section class="story-block">
-      <div class="gift-box">
-        <h3>🎁 Why We Give You A FREE Direct Meta API Key</h3>
-        <p style="color: #e2e8f0; margin-bottom: 1rem;">
-          During my journey, I discovered that Meta provides the Official WABA Cloud API key <strong>100% FREE directly from Meta</strong>.
-        </p>
-        <p style="color: #e2e8f0; margin-bottom: 0;">
-          Agencies and middleman platforms charge you thousands of rupees per month for API access. <strong>We don't charge you a single rupee for your API key.</strong> We set up your direct Official Meta Cloud API key for free — saving you from vendor taxes while giving you 0% account ban risk.
-        </p>
+    <!-- SECTION 2: WHAT IS A CUSTOM AGENT HARNESS -->
+    <section id="harness-concept" class="section-wrap">
+      <h2 class="section-title">You Don't Need An AI Agent. You Need A Custom Harness.</h2>
+      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact business operations.</p>
+
+      <div class="bento-grid-3col">
+        <div class="bento-card">
+          <span class="bento-badge badge-gold">PILLAR 01</span>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Custom Business Ingestion</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary);">
+            A harness cannot be a copy-paste SaaS product. We sit with your business, analyze your ledgers, your credit habits, and your specific operational edge cases first.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <span class="bento-badge badge-gold">PILLAR 02</span>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">ICM + OKF Sovereign File Architecture</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary);">
+            We govern AI context using human-readable Markdown (`.md`) files. The system is so <strong>simple</strong> that any non-technical family member or staff member can read the rules in plain language and understand what is happening.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <span class="bento-badge badge-emerald">PILLAR 03</span>
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">30-Day Co-Deployment & Output Guarantee</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary);">
+            We don't sell flowcharts and leave. We stay with your business for 30 days, test real-world edge cases (typos, promise dates, disputes), and evolve the harness until it delivers guaranteed <strong>Desired Output</strong>.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Interactive DSO & ROI Calculator Widget -->
-    <section class="story-block">
-      <h2 class="story-heading">5. Calculate Your Unlocked Cash Flow</h2>
-      <p>
-        See how much working capital your business unlocks when manual ledger follow-ups are automated with an official WABA Agent Harness:
-      </p>
+    <!-- SECTION 3: JMBT PATNA GROUND TRUTH CASE STUDY -->
+    <section id="case-study-jmbt" class="section-wrap">
+      <article class="editorial-case-study">
+        
+        <header style="text-align: center; margin-bottom: 4rem;">
+          <span class="bento-badge badge-emerald" style="font-size: 0.85rem; padding: 0.45rem 1.35rem;">AUTHENTIC GROUND TRUTH CASE STUDY</span>
+          <h2 style="font-size: 2.85rem; color: var(--text-primary); margin-top: 0.85rem; line-height: 1.2;">
+            The Wholesale Credit Nightmare: How A Failed AI Workflow Taught Us What Businesses Actually Need
+          </h2>
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 760px; margin: 1.15rem auto 0;">
+            The authentic operational story of Manoj Kumar (Founder, Jai Maa Bhagwati Traders, Patna) & Keshav Kumar, cement & rod credit ledgers, scraper ban recovery, and the creation of the Custom Agent Harness.
+          </p>
+        </header>
+
+        <!-- Stat Bento -->
+        <aside class="cs-stat-bento" style="margin-bottom: 4rem;">
+          <div class="proof-grid">
+            <div>
+              <div style="font-size: 2.3rem; font-weight: 800; color: var(--accent-gold);">₹72.42L+</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Receivables Unlocked</div>
+            </div>
+            <div>
+              <div style="font-size: 2.3rem; font-weight: 800; color: var(--text-primary);">1,181</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Active Clients</div>
+            </div>
+            <div>
+              <div style="font-size: 2.3rem; font-weight: 800; color: var(--accent-emerald);">₹50k/mo</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Saved On Staff</div>
+            </div>
+            <div>
+              <div style="font-size: 2.3rem; font-weight: 800; color: var(--accent-emerald);">0 Bans</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">100% Direct Meta API</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Narrative Story Content -->
+        <div class="cs-narrative" style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.9; color: #1e293b;">
+          
+          <h3 style="font-size: 1.7rem; color: var(--text-primary); margin-bottom: 1.15rem;">1. The 1,000+ Client Construction Ledger Crisis</h3>
+
+          <p>
+            Manoj Kumar runs <em>Jai Maa Bhagwati Traders (JMBT)</em> in Patna—a wholesale dealership for heavy construction materials: cement, TMT steel rods, and PVC/iron pipes.
+          </p>
+
+          <p>
+            In the construction trade, sales volume is high (₹10L to ₹20L per client), but buyers maintain continuous rolling credit balances (keeping ₹20,000 to ₹30,000 unpaid, or ₹1L to ₹3L pending). Over 1,181 retail contractors and dealers relied on JMBT.
+          </p>
+
+          <p>
+            Manoj Kumar was running the business alone. It was physically impossible for one man to call thousands of clients every month. Hiring dedicated account managers meant paying <strong>₹30,000 to ₹50,000/month</strong>, yet staff still made register-matching errors and forgot follow-ups on promised payment dates. Over ₹70 Lakhs remained trapped in the market.
+          </p>
+
+          <figure style="margin: 3.5rem 0; padding: 2.25rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); text-align: center;">
+            <blockquote style="font-family: var(--font-serif); font-style: italic; font-size: 1.85rem; line-height: 1.4; color: var(--text-primary); margin-bottom: 1rem;">
+              "My father Manoj Kumar was spending 60 hours a week dialing unpaid accounts while his own suppliers demanded cash clearing. You can't hire 3 managers at ₹50,000 every month just to match registers."
+            </blockquote>
+            <figcaption style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">&mdash; Keshav Kumar, Son & System Architect</figcaption>
+          </figure>
+
+          <h3 style="font-size: 1.7rem; color: var(--text-primary); margin: 2.75rem 0 1.15rem;">2. The Scraper Ban, Custom Agent Failures & The 3-Month AI Nightmare</h3>
+
+          <p>
+            Desperate for a fix, Keshav turned to technology. First, an unapproved browser scraper software got Manoj Kumar's <strong>10-year-old primary WhatsApp business account permanently banned by Meta</strong>, destroying years of customer chat history and trust in one morning. 
+          </p>
+
+          <p>
+            Next, Keshav tried hiring freelancers for n8n/Zapier bots, but they hallucinated 40% discounts on pending bills and spammed VIP clients. 
+          </p>
+
+          <p>
+            Determined to fix it himself, Keshav spent months building his own <strong>custom AI agentic workflows</strong>. But the moment real business data entered the system, the custom agentic workflow collapsed:
+          </p>
+
+          <ul style="padding-left: 1.5rem; margin-bottom: 2.5rem;">
+            <li style="margin-bottom: 0.85rem;"><strong>Heavy, Complex & Filled with Lag:</strong> Running multiple sub-agents was too heavy, created severe latency, and was a nightmare to manage.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>The Hallucination Cascade:</strong> There was always a bug. When the AI hallucinated a single piece of data, it triggered a <strong>cascade of errors</strong>—mismatched client records, wrong numbers, wrong emails, and 20 to 30 duplicate spam messages firing at angry customers.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>3 Months Staring at a Laptop:</strong> For 3 agonizing months, Keshav sat at his laptop every single day trying to fix one bug, only for 3 new bugs to appear. Input token costs skyrocketed, latency mounted, and zero reliable output was achieved.</li>
+          </ul>
+
+          <h3 style="font-size: 1.7rem; color: var(--text-primary); margin: 2.75rem 0 1.15rem;">3. How Keshav Solved It: The Custom Agent Harness Breakthrough</h3>
+
+          <p>
+            After 3 months of frustration, Keshav stepped back and analyzed the problem from first principles. He realized a fundamental truth: <strong>You don't need an AI agent. You need a Custom Agent Harness.</strong>
+          </p>
+
+          <p>
+            Anyone can launch 100 sub-agents. But in a real business, unconstrained agents will always hallucinate. Furthermore, you cannot sell a copy-paste SaaS product or generic template to every business—every company has unique ledgers, credit terms, and operational edge cases.
+          </p>
+
+          <p>
+            Keshav stopped trying to build complex agents and engineered a <strong>Custom Agent Harness</strong> built on three breakthrough principles:
+          </p>
+
+          <ul style="padding-left: 1.5rem; margin-bottom: 2.5rem;">
+            <li style="margin-bottom: 0.85rem;"><strong>Governed Sovereign Context (ICM + OKF):</strong> Keshav combined <em>Interpretable Context Methodology (ICM)</em> and the <em>Open Knowledge Format (OKF)</em>. Instead of complex code or black-box flowcharts, all business rules, context, and ledger logic were written in plain-text Markdown files (`.md`). The system became so <strong>simple</strong> that his father Manoj Kumar or any non-technical staff member could open a file, read the rules in plain English, and understand exactly what the system was doing.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>Direct Official Meta Cloud API (0% Ban Risk):</strong> He threw out unofficial scrapers and provisioned official Meta WABA Cloud API keys directly from Meta—eliminating account ban risks completely while bypassing middleman SaaS markup taxes.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>Smart Failure & Human-in-the-Loop (HITL):</strong> If a client reported a damaged shipment, a Khata dispute, or requested a payment date extension, the harness didn't guess. It safely <strong>paused automated messaging</strong> for that contact and alerted Manoj Kumar for manual review.</li>
+          </ul>
+
+          <h3 style="font-size: 1.7rem; color: var(--text-primary); margin: 2.75rem 0 1.15rem;">4. Positive Results & Building For Others</h3>
+
+          <p>
+            The Custom Agent Harness delivered immediate, transformational results:
+          </p>
+
+          <ul style="padding-left: 1.5rem; margin-bottom: 2.5rem;">
+            <li style="margin-bottom: 0.85rem;"><strong>Unblocked Liquidity:</strong> Accurately tracked and recovered pending accounts across 1,000+ construction contractors without a single calculation error.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>Cost Saved:</strong> Saved Manoj Kumar <strong>₹30,000 to ₹50,000/month</strong> in unnecessary account manager salaries.</li>
+            <li style="margin-bottom: 0.85rem;"><strong>Zero Account Risk:</strong> 100% official Meta compliance with zero WhatsApp account bans or spam flags.</li>
+          </ul>
+
+          <p>
+            After seeing his father's business transform from a daily operational nightmare into a smooth, automated system, Keshav realized that <strong>every business owner is struggling with broken AI hype and custom operational bottlenecks</strong>. 
+          </p>
+
+          <p>
+            Today, Keshav builds <strong>Custom Agent Harnesses</strong> for business owners—sitting with them, understanding their specific problems, and co-deploying for 30 days to deliver guaranteed <strong>Desired Business Output</strong>.
+          </p>
+
+          <div style="text-align: center; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border-light);">
+            <a href="#audit" class="btn-cta open-modal" style="font-size: 1.1rem; padding: 1.25rem 3rem;">Schedule A 15-Minute Operational Audit &rarr;</a>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+    <!-- SECTION 4: LIVE WABA PLAYGROUND -->
+    <section id="playground" class="section-wrap">
+      <h2 class="section-title">Live Custom Harness Playground</h2>
+      <p class="section-sub">Test how our verified WABA Harness enforces 100% deterministic outputs vs how generic AI agents hallucinate.</p>
+
+      <div class="playground-box">
+        <div class="playground-grid">
+          
+          <div class="playground-controls">
+            <h4 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 0.5rem;">🕹️ Interactive Controls</h4>
+            
+            <div class="control-group">
+              <label class="control-label">Client / Merchant Name:</label>
+              <input type="text" id="playground-client-name" class="control-input" value="Rajesh Hardware Patna">
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" style="display: flex; justify-content: space-between;">
+                <span>Outstanding Balance:</span>
+                <span id="playground-amount-val" style="color: var(--accent-gold); font-weight: 700;">₹15,711</span>
+              </label>
+              <input type="range" id="playground-amount-slider" class="calc-slider" min="1000" max="150000" step="1000" value="15711">
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">Execution Scenario:</label>
+              <select id="playground-scenario-select" class="control-select">
+                <option value="bucket1">🟢 Bucket 1 (1–15 Days): Polite Nudge</option>
+                <option value="bucket2">🟡 Bucket 2 (16–30 Days): Soft Ledger Summary</option>
+                <option value="bucket3">🔴 Bucket 3 (31+ Days): Direct Overdue Query</option>
+                <option value="disputed">⚡ Disputed Merchant: Smart HITL Pause Engine</option>
+                <option value="flaky_bot">❌ Flaky AI Bot Mode (Failure Showcase)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Chat Screen -->
+          <div class="chat-screen">
+            <div id="playground-chat-display">
+              <!-- Rendered via JS -->
+            </div>
+            <div id="playground-status-display">
+              <!-- Status badge via JS -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: COMPETITOR COMPARISON TEARDOWN -->
+    <section id="comparison" class="section-wrap">
+      <h2 class="section-title">Custom Agent Harness vs The Market</h2>
+      <p class="section-sub">Why off-the-shelf WhatsApp SaaS apps (Wati, AiSensy), Khatabook, and n8n freelancers fail in real business operations.</p>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; background: #FFFFFF; border-radius: var(--radius-md); border: 1px solid var(--border-light); overflow: hidden; box-shadow: var(--shadow-md);">
+          <thead>
+            <tr style="background: #0F172A; color: #FFFFFF; text-align: left; font-family: var(--font-display);">
+              <th style="padding: 1.25rem 1.5rem;">Feature / Capability</th>
+              <th style="padding: 1.25rem 1.5rem;">WhatsApp SaaS (Wati/AiSensy)</th>
+              <th style="padding: 1.25rem 1.5rem;">Accounting Apps (Khatabook)</th>
+              <th style="padding: 1.25rem 1.5rem;">AI Agencies (n8n/Zapier)</th>
+              <th style="padding: 1.25rem 1.5rem; background: var(--accent-gold); color: #0F172A;">Agent Harness Studio (ICM + OKF)</th>
+            </tr>
+          </thead>
+          <tbody style="font-size: 0.95rem;">
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">WhatsApp Account Safety</td>
+              <td style="padding: 1.15rem 1.5rem;">Official WABA</td>
+              <td style="padding: 1.15rem 1.5rem;">N/A (Manual Click)</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-red); font-weight: 600;">🔴 High Ban Risk (Scrapers)</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 0% Ban Risk (Direct Meta Cloud API)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">API Cost Structure</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-red);">🔴 10%–39% Markup Tax</td>
+              <td style="padding: 1.15rem 1.5rem;">N/A</td>
+              <td style="padding: 1.15rem 1.5rem;">Variable API Costs</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 Free Direct Meta Keys (0% Markup)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Ledger & Khata Parsing</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ No</td>
+              <td style="padding: 1.15rem 1.5rem;">🟡 Basic Entry Only</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Unreliable</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 Advanced Sovereign Markdown Parsing</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Zero-Hallucination Gate</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Rule Flowchart Only</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ None</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-red);">❌ Probabilistic (Guesses)</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 contract.schema.json Math Gate</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Dispute & Promise Handling</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Fails on Typos</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Manual Only</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Breaks Workflow</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 Smart HITL Pause Engine</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">System Transparency</td>
+              <td style="padding: 1.15rem 1.5rem;">Black-Box SaaS</td>
+              <td style="padding: 1.15rem 1.5rem;">Closed Mobile App</td>
+              <td style="padding: 1.15rem 1.5rem;">Complex JSON Spaghetti</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 Sovereign Markdown (.md) Files</td>
+            </tr>
+            <tr>
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Business Commitment</td>
+              <td style="padding: 1.15rem 1.5rem;">Monthly Software Sub</td>
+              <td style="padding: 1.15rem 1.5rem;">Software License</td>
+              <td style="padding: 1.15rem 1.5rem;">One-off Code Drop</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 30-Day Co-Deployment Output Guarantee</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SOVEREIGN CONTRACTS & SCHEMAS -->
+    <section id="samples" class="section-wrap">
+      <h2 class="section-title">Human-Readable Sovereign Contracts (Simple & Transparent)</h2>
+      <p class="section-sub">No complex black-box flowcharts. Inspect the exact Markdown files that govern your business logic.</p>
+
+      <div class="file-inspector">
+        <div class="inspector-nav">
+          <div class="inspector-tabs-wrap">
+            <button class="inspector-tab active" data-file="client_register.md">client Register.md (Input Rules)</button>
+            <button class="inspector-tab" data-file="clientautomation.md">clientautomation.md (Render Queue)</button>
+            <button class="inspector-tab" data-file="contract.schema.json">contract.schema.json (0% Error Gate)</button>
+          </div>
+          <button id="btn-copy-inspector" class="btn-copy-code">Copy Code</button>
+        </div>
+        <pre id="inspector-code-display" class="inspector-code">/* ==========================================================================
+   client Register.md Parsing Rules (client-automation-file-skill)
+   ========================================================================== */
+
+# CORE FILTERING PROTOCOL
+1. Read all customer records from `client Register.md`.
+2. SKIP if client status: `pause`, `Excluded`, `Disputed`, `Verification Pending`, `Reconciliation Pending`, `Temporary Pause`.
+3. SKIP if promise date is active and date has not arrived yet.
+4. SKIP if total due amount is <= ₹0.
+5. CONFUSING DATA: Alert owner on WhatsApp and isolate corrupt record immediately.</pre>
+      </div>
+    </section>
+
+    <!-- SECTION 7: DSO & ROI CALCULATOR -->
+    <section id="calculator" class="section-wrap">
+      <h2 class="section-title">Days Sales Outstanding (DSO) & ROI Calculator</h2>
+      <p class="section-sub">Calculate your unlocked working capital, DSO acceleration, and annual interest loan savings by eliminating manual debt collection.</p>
 
       <div class="calc-box">
         <div class="calc-slider-wrap">
@@ -268,184 +515,175 @@ get_header(); ?>
 
         <div class="calc-result-grid">
           <div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Working Capital Unlocked</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 0.35rem; text-transform: uppercase; font-weight: 600;">Working Capital Unlocked</div>
             <div class="calc-result-val" id="calc-unlocked-cash">₹20.00 Lakhs</div>
           </div>
           <div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Collection Velocity Improvement</div>
-            <div class="calc-result-val" id="calc-dso-reduced" style="color: var(--accent-gold);">45d → 27d (18 days faster)</div>
+            <div style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 0.35rem; text-transform: uppercase; font-weight: 600;">Collection Velocity</div>
+            <div class="calc-result-val" id="calc-dso-reduced" style="color: var(--accent-gold-bright);">45d → 27d</div>
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 0.35rem; text-transform: uppercase; font-weight: 600;">Annual Loan Interest Saved (12%)</div>
+            <div class="calc-result-val" id="calc-interest-saved" style="color: #60A5FA;">₹2.40 Lakhs/yr</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Forensic Case Study -->
-    <section class="story-block">
-      <h2 class="story-heading">6. Real Forensic Proof: Jai Maa Bhagwati Traders (JMBT)</h2>
-
-      <p>
-        I didn't test this on a fake demo. I deployed it on a real high-volume wholesale business with over ₹70 Lakhs locked in delayed customer ledgers across 1,181 buyers.
-      </p>
-
-      <div class="case-study-narrative">
-        <h3 style="font-size: 1.75rem; color: var(--accent-gold); margin-bottom: 1rem;">The ₹72.42 Lakhs Forensic Audit</h3>
-        <p>
-          Manual staff calling was taking weeks and ruining buyer relationships. Unofficial scrapers had almost gotten them banned.
-        </p>
-        <p>
-          We deployed our custom 5-Layer Agent Harness using their direct FREE Meta API key. The system ingested PDF statements, normalized phone numbers, segmented buyers into 6 Granular Pillars, and automatically paused 92 disputed clients for human reconciliation.
-        </p>
-
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-val">₹72.42L</div>
-            <div class="stat-lbl">Dues Tracked & Restored</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">1,181</div>
-            <div class="stat-lbl">Active Clients Segmented</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">92 Clients</div>
-            <div class="stat-lbl">Safely Paused (HITL)</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">0 Bans</div>
-            <div class="stat-lbl">100% Direct Meta API</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Rule Inspector: Context is God -->
-    <section class="story-block">
-      <h2 class="story-heading">7. Inspect The Transparent Rule Files</h2>
-      <p>
-        We don't sell black-box SaaS tools. We build custom software inside your company. All rules live in human-readable Markdown files that you can inspect and edit anytime:
-      </p>
-
-      <div class="file-inspector">
-        <div class="inspector-nav">
-          <button class="inspector-tab active" data-file="AGENTS.md">AGENTS.md (Guardrails)</button>
-          <button class="inspector-tab" data-file="SOUL.md">SOUL.md (Business Rules)</button>
-          <button class="inspector-tab" data-file="contract.schema.json">contract.schema.json (0% Error Gate)</button>
-        </div>
-        <pre id="inspector-code-display" class="inspector-code">/* ==========================================================================
-   AGENTS.md — Universal Identity & Guardrail Layer (Layer 1)
-   ========================================================================== */
-
-# IMMUTABLE SOVEREIGN CONTRACT
-- Role: Deterministic Revenue & Ledger Automation Agent
-- Engine: 100% Meta Official WhatsApp Business API (Direct WABA Cloud Key)
-- Rule 1: NEVER guess or hallucinate currency figures or ledger balances.
-- Rule 2: All automation triggers must anchor to verified database events.
-- Rule 3: Disputed client accounts trigger immediate Smart HITL Pause.
-
-## TRUST & DATA BOUNDARIES
-- Allowed: Read ledger balances, dispatch Meta-approved utility templates.
-- Forbidden: Cannot issue unauthorized discounts or modify core accounts without owner key.</pre>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="story-block">
-      <h2 class="story-heading">Frequently Asked Questions</h2>
+    <!-- SECTION 8: FAQ WITH SEARCH -->
+    <section id="faq" class="section-wrap">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Got questions about Meta WABA API integration, ledger parsing, or zero-hallucination guarantees? Search below:</p>
       
+      <div class="faq-search-wrap">
+        <input type="text" id="faq-search-input" class="faq-search-input" placeholder="🔍 Type to search FAQ (e.g. Meta API, ban, calculation, damaged)...">
+      </div>
+
       <div class="faq-list">
         <div class="faq-card">
           <button class="faq-q">
-            <span>Why do you give us a FREE Direct Meta API key instead of charging for API access?</span>
-            <span>+</span>
+            <span>Why do you build custom software instead of selling a monthly SaaS app?</span>
+            <span class="faq-q-icon">+</span>
           </button>
           <div class="faq-a">
-            Because Meta provides direct Cloud API access for free, and third-party middleman SaaS tools mark up fees unnecessarily while introducing ban risk. We set up your direct Meta API key so you pay zero vendor taxes and get 100% official compliance.
+            Because every real business has unique credit rules, payment habits, and edge cases. Generic SaaS tools force you into rigid templates that break. We build custom harnesses inside your business that evolve with you.
           </div>
         </div>
 
         <div class="faq-card">
           <button class="faq-q">
-            <span>How do you guarantee the AI won't hallucinate or send wrong amounts?</span>
-            <span>+</span>
+            <span>Why do you set up our Direct Meta API key for free?</span>
+            <span class="faq-q-icon">+</span>
           </button>
           <div class="faq-a">
-            We use strict `contract.schema.json` validation gates. The AI is not allowed to generate financial numbers freely; it must pass hard mathematical and schema checks against your database before any message is sent.
+            Because Meta provides direct Cloud API access without fees. Third-party SaaS tools add 10%–39% markups and introduce account risk. Setting up direct keys ensures 100% official compliance and zero vendor tax.
           </div>
         </div>
 
         <div class="faq-card">
           <button class="faq-q">
-            <span>Why build software inside our company instead of selling a monthly SaaS app?</span>
-            <span>+</span>
+            <span>How do you guarantee the AI won't hallucinate or send wrong balance calculations?</span>
+            <span class="faq-q-icon">+</span>
           </button>
           <div class="faq-a">
-            Because every real business has unique rules, edge cases, and client nuances. Generic SaaS tools force you into rigid templates that break. We build custom, file-based software inside your environment so you retain 100% control, ownership, and data privacy.
+            All numerical outputs must pass strict `contract.schema.json` mathematical checks against your accounting records before any Meta WABA or email message is dispatched.
           </div>
         </div>
 
         <div class="faq-card">
           <button class="faq-q">
-            <span>What happens if a client disputes an invoice or asks for more time?</span>
-            <span>+</span>
+            <span>What happens when a customer reports a damaged delivery or dispute?</span>
+            <span class="faq-q-icon">+</span>
           </button>
           <div class="faq-a">
-            Our Smart Human-in-the-Loop (HITL) pause engine automatically flags disputed accounts or payment promises within 30 days and removes them from automated dunning queues for manual owner review.
+            The Smart Human-in-the-Loop (HITL) engine detects dispute keywords, instantly pauses automated messaging for that specific contact, and routes the conversation to your team for manual review.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-q">
+            <span>What does your "30-Day Co-Deployment" mean?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            We don't drop code and ghost. We stay with your business for 30 days, test real-world customer responses, refine rules, and ensure the system delivers the exact financial output promised.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Closing Call To Action -->
-    <section id="audit" class="story-block" style="text-align: center; border-bottom: none; padding-bottom: 5rem;">
-      <span class="kicker">// LIMITED MONTHLY INTAKE</span>
-      <h2 style="font-size: 2.75rem; margin-bottom: 1.25rem;">We Only Partner With 2 Companies Per Month</h2>
-      <p style="color: var(--text-secondary); max-width: 640px; margin: 0 auto 2.25rem;">
-        Because every build is custom software engineered specifically for your business operations, we restrict our intake to guarantee 100% zero-error execution.
+    <!-- SECTION 9: AUDIT CTA -->
+    <section id="audit" class="section-wrap" style="text-align: center; border-bottom: none; padding-bottom: 7rem;">
+      <h2 style="font-size: 3rem; margin-bottom: 1.25rem;">Schedule an Operational Problem Audit</h2>
+      <p style="color: var(--text-secondary); max-width: 660px; margin: 0 auto 2.75rem; font-size: 1.15rem;">
+        We limit monthly partner intake to 2 companies to ensure dedicated custom engineering and zero-error deployment.
       </p>
-      <button class="btn-cta open-modal" style="font-size: 1.15rem; padding: 1.1rem 2.75rem;">Talk To The Founder — Book 15-Min Problem Audit</button>
+      <button class="btn-cta open-modal" style="font-size: 1.15rem; padding: 1.25rem 3.25rem;">Book 15-Minute Audit &rarr;</button>
     </section>
 
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container-editorial">
-      <p>© <?php echo date('Y'); ?> Agent Harness Studio. Engineered with Interpretable Context Methodology (ICM) & Direct Meta WABA API Keys.</p>
+    <div class="container-wide">
+      <p>© <?php echo date('Y'); ?> Agent Harness Studio. B2B Revenue Automation Engineering. Built with ICM & Direct Meta WABA Cloud API.</p>
     </div>
   </footer>
 
-  <!-- Booking Modal -->
+  <!-- Multi-Step Founder Booking Wizard Modal -->
   <div id="founder-modal" class="modal-overlay">
     <div class="modal-content">
       <button class="modal-close">&times;</button>
-      <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.5rem;">Schedule Your 15-Min Problem Audit</h3>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-        Tell us about your primary business bottleneck. You will speak directly with the founder — no pushy sales reps or generic pitches.
-      </p>
+      
+      <div class="wizard-steps-nav">
+        <div class="wizard-step-dot active"></div>
+        <div class="wizard-step-dot"></div>
+        <div class="wizard-step-dot"></div>
+      </div>
 
-      <form id="founder-audit-form">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="e.g. Rajesh Kumar" required>
+      <form id="founder-audit-wizard-form">
+        
+        <!-- STEP 1: Basic Founder Info -->
+        <div class="wizard-step-content active" data-step="1">
+          <h3 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 0.5rem;">Step 1: Business Identity</h3>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Tell us about your business so system architect Keshav Kumar can review your operational context before the call.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" id="audit-name" class="form-input" placeholder="e.g. Rajesh Kumar" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Name & Industry</label>
+            <input type="text" id="audit-company" class="form-input" placeholder="e.g. Acme Wholesale (B2B Distribution)" required>
+          </div>
+
+          <button type="button" id="wizard-btn-step1-next" class="btn-cta" style="width: 100%; margin-top: 1rem;">Next: Bottleneck Assessment &rarr;</button>
         </div>
-        <div class="form-group">
-          <label class="form-label">Company Name & Industry</label>
-          <input type="text" class="form-input" placeholder="e.g. Acme Wholesale (B2B Distribution)" required>
+
+        <!-- STEP 2: Bottleneck Assessment -->
+        <div class="wizard-step-content" data-step="2">
+          <h3 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 0.5rem;">Step 2: Operational Bottleneck</h3>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            What is currently trapping your capital or causing operational headaches?
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Primary Operational Challenge</label>
+            <select id="audit-challenge" class="form-select" required>
+              <option value="">Select primary bottleneck...</option>
+              <option value="collections">High DSO / Outstanding ledgers (Over ₹50L trapped)</option>
+              <option value="banned">WhatsApp account ban risk / Using scrapers</option>
+              <option value="hallucinations">AI bot messaging errors / Customer disputes</option>
+              <option value="custom">ERP / Tally / Custom ledger integration</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <button type="button" id="wizard-btn-step2-prev" class="btn-cta-secondary" style="flex: 1;">&larr; Back</button>
+            <button type="button" id="wizard-btn-step2-next" class="btn-cta" style="flex: 2;">Next: Contact Details &rarr;</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">WhatsApp Number / Email</label>
-          <input type="text" class="form-input" placeholder="+91 98765 43210 / name@company.com" required>
+
+        <!-- STEP 3: Contact & Submit -->
+        <div class="wizard-step-content" data-step="3">
+          <h3 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 0.5rem;">Step 3: Direct Contact</h3>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Where should system architect Keshav Kumar send your audit findings?
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">WhatsApp Number / Business Email</label>
+            <input type="text" id="audit-contact" class="form-input" placeholder="+91 98765 43210 / name@company.com" required>
+          </div>
+
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+            <button type="button" id="wizard-btn-step3-prev" class="btn-cta-secondary" style="flex: 1;">&larr; Back</button>
+            <button type="submit" class="btn-cta" style="flex: 2;">Submit Audit Request &rarr;</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Primary Business Challenge</label>
-          <select class="form-select" required>
-            <option value="">Select your main bottleneck...</option>
-            <option value="collections">High DSO / Lakhs stuck in uncollected ledgers</option>
-            <option value="banned">Got WhatsApp account banned by un-official tools</option>
-            <option value="hallucinations">AI bot hallucinations & wrong message sending</option>
-            <option value="custom">Need custom Tally/ERP & file-based automation</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-cta" style="width: 100%; margin-top: 1rem;">Book Audit With Founder</button>
+
       </form>
     </div>
   </div>
