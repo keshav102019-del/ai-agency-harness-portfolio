@@ -1,15 +1,15 @@
 ---
-name: AgentHarnessMinimal
+name: AgentHarnessWhiteMinimal
 colors:
-  primary: "#080A0F"
-  surface: "#11141C"
-  card: "rgba(17, 20, 28, 0.5)"
-  accent-gold: "#D4AF37"
-  accent-emerald: "#34D399"
-  accent-red: "#F87171"
-  text-primary: "#F8FAFC"
-  text-secondary: "#94A3B8"
-  text-muted: "#64748B"
+  primary: "#FCFBF9"
+  surface: "#FFFFFF"
+  card: "#FFFFFF"
+  accent-gold: "#B48346"
+  accent-emerald: "#059669"
+  accent-red: "#DC2626"
+  text-primary: "#0F172A"
+  text-secondary: "#475569"
+  text-muted: "#94A3B8"
 typography:
   h1:
     fontFamily: Inter
@@ -40,20 +40,20 @@ spacing:
   lg: 7.5rem
 ---
 
-# DESIGN.md — Minimalist Cyber-Editorial Specification
+# DESIGN.md — White Minimalist Premium Architectural Specification
 
 ## Brand & Style
-An ultra-premium, minimalist design system tailored for high-end B2B revenue and automation engineering. Combines Swiss typographic rigor, dramatic macro-whitespace, deep matte obsidian surfaces, and authentic champagne gold accents.
+An ultra-premium, white minimalist design system tailored for high-end B2B revenue and automation engineering. Inspired by Apple, Stripe, and Aesop design aesthetics. Combines crisp white space, deep ink typography, subtle glass hairline borders, and warm champagne gold accents.
 
 ## Colors
-* **Substrate / Dark (`primary`)**: `#080A0F` (Pure Matte Obsidian)
-* **Surface (`surface`)**: `#11141C` (Subtle Muted Charcoal)
-* **Translucent Card (`card`)**: `rgba(17, 20, 28, 0.5)` with `backdrop-filter: blur(40px)`
-* **Champagne Gold (`accent-gold`)**: `#D4AF37` (Primary Accent & Conversion Target)
-* **Soft Emerald (`accent-emerald`)**: `#34D399` (Verified Status & Recovery Metrics)
-* **Muted Alert (`accent-red`)**: `#F87171` (Disaster Warning Signals)
-* **Primary Text (`text-primary`)**: `#F8FAFC` (Stark Clean White)
-* **Secondary Text (`text-secondary`)**: `#94A3B8` (Muted Slate)
+* **Substrate / Light (`primary`)**: `#FCFBF9` (Pristine Warm Alabaster White)
+* **Surface (`surface`)**: `#FFFFFF` (Pure White)
+* **Clean Card Substrate (`card`)**: `#FFFFFF` with `border: 1px solid rgba(0, 0, 0, 0.06)` & `box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03)`
+* **Champagne Gold (`accent-gold`)**: `#B48346` (Warm Metallic Gold)
+* **Clean Emerald (`accent-emerald`)**: `#059669` (Deep Verified Emerald)
+* **Alert Red (`accent-red`)**: `#DC2626` (Clean Alert Red)
+* **Primary Text (`text-primary`)**: `#0F172A` (Deep Ink Charcoal)
+* **Secondary Text (`text-secondary`)**: `#475569` (Muted Slate)
 
 ## Typography
 * **Primary Sans**: `Inter`, `-apple-system`, `BlinkMacSystemFont`, `sans-serif`
@@ -62,27 +62,20 @@ An ultra-premium, minimalist design system tailored for high-end B2B revenue and
 * **Heading Scale**: `h1` = 3.5rem (tracking -0.035em), `h2` = 2.25rem, `h3` = 1.5rem.
 
 ## Layout & Spacing
-* **Editorial Container Width**: `840px` (Optimized for 65-75 characters per line readability).
+* **Editorial Container Width**: `840px`.
 * **Wide Bento Grid Width**: `1200px`.
 * **Architectural Whitespace**: `7.5rem` vertical section padding.
 * **Component Grid Gap**: `2.25rem`.
 
 ## Elevation & Depth
-* **Glassmorphic Cards**: `backdrop-filter: blur(40px)` + `border: 1px solid rgba(255, 255, 255, 0.05)`.
-* **Top Hairline Highlight**: `inset 0 1px 0 0 rgba(255, 255, 255, 0.05)`.
-* **Ambient Glow**: Single radial gold gradient at top (`radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%)`).
+* **Minimalist White Cards**: `background: #FFFFFF`, `border: 1px solid rgba(0,0,0,0.06)`, `box-shadow: 0 4px 20px rgba(0,0,0,0.03)`.
+* **Hover State**: `border-color: rgba(180, 131, 70, 0.4)`, `box-shadow: 0 12px 35px -5px rgba(180, 131, 70, 0.12)`.
 
 ## Shapes
 * **Border Radius**: `8px` (small controls), `14px` (cards/containers), `9999px` (pills/badges).
 
-## Components
-* **Header Button**: Solid Champagne Gold `#D4AF37`, text `#080A0F`, font-weight 700.
-* **Bento Card**: Dark glass substrate, 2.5rem padding, subtle border hover transition.
-* **Interactive Simulator**: Translucent chat bubbles with 1px hairline borders.
-* **DSO Calculator**: Minimalist 3px range track with glowing gold thumb.
-
 ## Do's and Don'ts
-* **DO**: Maintain 7.5rem vertical section margins to let components breathe.
-* **DO**: Use italic *Newsreader* serif for editorial blockquotes and founder thoughts.
-* **DON'T**: Add noisy background grid lines, rainbow gradients, or floating particles.
-* **DON'T**: Use generic 3-column pricing boxes or generic marketing jargon.
+* **DO**: Maintain 7.5rem vertical section margins to let components breathe against clean white space.
+* **DO**: Use dark ink charcoal text (`#0F172A`) for crisp, high-contrast readability.
+* **DON'T**: Use dark/black background fills or heavy neon glow effects.
+* **DON'T**: Use generic cluttered elements. Keep every section pristine, minimalist, and clean.
