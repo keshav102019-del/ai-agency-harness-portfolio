@@ -96,7 +96,7 @@ get_header(); ?>
 
       <!-- Hero Visual Showcase -->
       <div class="hero-image-wrap">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/waba_dashboard.png' ); ?>" alt="Meta WABA Agent Harness Live Dashboard">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/chatwoot_dashboard.png?v=20260803' ); ?>" alt="Chatwoot Live WhatsApp Business API Client Interaction Dashboard" loading="eager">
       </div>
     </section>
 
