@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <!-- Glow Background Spotlight -->
+  <div class="glow-spotlight-top"></div>
+
   <!-- Top Live Notice Bar -->
   <div class="top-notice-bar">
     <div class="container-wide notice-flex">
@@ -42,14 +45,14 @@
     <section class="editorial-hero">
       <span class="kicker">// A PERSONAL LETTER TO REAL BUSINESS OPERATORS</span>
       <h1 class="main-headline">
-        "Everyone Says AI Is The Future. But The Moment You Ask It To Do One Simple Thing For Your Business, <span>It Gives You Hallucination and AI Slop."</span>
+        "Everyone Said AI Was The Future. But When You Asked It To Send One Simple Payment Reminder, <span>It Hallucinated A Fake Discount, Spam-Mailed Your VIP Client, And Got Your WhatsApp Number Permanently Banned."</span>
       </h1>
 
       <div class="byline">
         <div class="author-img">AH</div>
         <div>
-          <div style="color: #fff; font-weight: 700;">By The Founder, Agent Harness Studio</div>
-          <div>Battle-Tested AI Practitioner & Founder | 1 Year First-Principles ICM Research</div>
+          <div style="color: #fff; font-weight: 700; font-size: 1.05rem;">By The Founder, Agent Harness Studio</div>
+          <div style="font-size: 0.85rem;">Battle-Tested AI Practitioner | 1 Year First-Principles ICM Research</div>
         </div>
       </div>
 
@@ -67,8 +70,13 @@
 
       <div class="editorial-callout">
         <p>
-          "When you actually try to use AI for a simple business task — like following up on an outstanding customer ledger or sending a payment reminder — the AI hallucinates, invents wrong invoice numbers, anger your VIP clients, or deletes your data."
+          "When you actually try to use AI for a simple business task — like following up on an outstanding customer ledger — the AI hallucinates, invents wrong invoice numbers, anger your VIP clients, or deletes your data."
         </p>
+      </div>
+
+      <!-- Hero Visual Asset -->
+      <div class="hero-image-wrap">
+        <img src="assets/waba_dashboard.png" alt="Meta WABA Agent Harness Live Dashboard">
       </div>
 
       <p>
@@ -154,6 +162,27 @@
       <p>
         For a full month, I was deeply frustrated with AI agents. 90% of what people were selling on the internet was pure junk and failure.
       </p>
+
+      <!-- Live Interactive WhatsApp Simulator Widget -->
+      <div class="simulator-box">
+        <h4 style="font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 0.5rem;">📱 Interactive Simulator: Flaky Bot vs Verified Harness</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+          Click the scenarios below to see how a generic AI bot fails vs how our verified WABA Harness executes:
+        </p>
+
+        <div class="simulator-grid">
+          <div>
+            <button class="sim-btn active" data-scenario="flaky">🔴 Scenario A: Flaky AI Bot (Hallucination)</button>
+            <button class="sim-btn" data-scenario="waba_harness">🟢 Scenario B: Verified WABA Harness (0% Error)</button>
+            <button class="sim-btn" data-scenario="disputed">⚡ Scenario C: Disputed Client (Smart HITL Pause)</button>
+          </div>
+          <div class="chat-screen" id="chat-simulator-display">
+            <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
+            <div class="chat-bubble chat-out" style="background: #7f1d1d;">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
+            <div class="chat-bubble chat-in" style="color: #f87171;">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Story Block 4: The ICM Breakthrough -->
@@ -172,6 +201,11 @@
         <p style="color: #ffffff; font-weight: 700;">
           "CONTEXT IS GOD. If you do not tightly govern the AI's context window with structured, sovereign files before execution, the model WILL hallucinate."
         </p>
+      </div>
+
+      <!-- Harness Architecture Image -->
+      <div class="hero-image-wrap">
+        <img src="assets/harness_architecture.png" alt="5-Layer Agent Harness Architecture Diagram">
       </div>
 
       <p>
@@ -204,9 +238,46 @@
       </div>
     </section>
 
+    <!-- Interactive DSO & ROI Calculator Widget -->
+    <section class="story-block">
+      <h2 class="story-heading">5. Calculate Your Unlocked Cash Flow</h2>
+      <p>
+        See how much working capital your business unlocks when manual ledger follow-ups are automated with an official WABA Agent Harness:
+      </p>
+
+      <div class="calc-box">
+        <div class="calc-slider-wrap">
+          <label>
+            <span>Monthly Outstanding Receivables (Lakhs):</span>
+            <span id="calc-amount-label" style="color: var(--accent-gold); font-weight: 700;">₹50.0 Lakhs</span>
+          </label>
+          <input type="range" id="calc-amount-slider" class="calc-slider" min="5" max="200" step="5" value="50">
+        </div>
+
+        <div class="calc-slider-wrap">
+          <label>
+            <span>Current Average Payment Delay (Days):</span>
+            <span id="calc-dso-label" style="color: var(--accent-gold); font-weight: 700;">45 Days</span>
+          </label>
+          <input type="range" id="calc-dso-slider" class="calc-slider" min="15" max="90" step="5" value="45">
+        </div>
+
+        <div class="calc-result-grid">
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Working Capital Unlocked</div>
+            <div class="calc-result-val" id="calc-unlocked-cash">₹20.00 Lakhs</div>
+          </div>
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Collection Velocity Improvement</div>
+            <div class="calc-result-val" id="calc-dso-reduced" style="color: var(--accent-gold);">45d → 27d (18 days faster)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Forensic Case Study -->
     <section class="story-block">
-      <h2 class="story-heading">5. Real Proof: The Jai Maa Bhagwati Traders (JMBT) Ledger Restoration</h2>
+      <h2 class="story-heading">6. Real Forensic Proof: Jai Maa Bhagwati Traders (JMBT)</h2>
 
       <p>
         I didn't test this on a fake demo. I deployed it on a real high-volume wholesale business with over ₹70 Lakhs locked in delayed customer ledgers across 1,181 buyers.
@@ -242,9 +313,9 @@
       </div>
     </section>
 
-    <!-- Interactive File Inspector: Context is God -->
+    <!-- Interactive Rule Inspector: Context is God -->
     <section class="story-block">
-      <h2 class="story-heading">6. Inspect The Transparent Rule Files</h2>
+      <h2 class="story-heading">7. Inspect The Transparent Rule Files</h2>
       <p>
         We don't sell black-box SaaS tools. We build custom software inside your company. All rules live in human-readable Markdown files that you can inspect and edit anytime:
       </p>
@@ -279,7 +350,27 @@
       <div class="faq-list">
         <div class="faq-card">
           <button class="faq-q">
-            <span>Why do you build software inside our company instead of selling a monthly SaaS app?</span>
+            <span>Why do you give us a FREE Direct Meta API key instead of charging for API access?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            Because Meta provides direct Cloud API access for free, and third-party middleman SaaS tools mark up fees unnecessarily while introducing ban risk. We set up your direct Meta API key so you pay zero vendor taxes and get 100% official compliance.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-q">
+            <span>How do you guarantee the AI won't hallucinate or send wrong amounts?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-a">
+            We use strict `contract.schema.json` validation gates. The AI is not allowed to generate financial numbers freely; it must pass hard mathematical and schema checks against your database before any message is sent.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <button class="faq-q">
+            <span>Why build software inside our company instead of selling a monthly SaaS app?</span>
             <span>+</span>
           </button>
           <div class="faq-a">
@@ -289,17 +380,7 @@
 
         <div class="faq-card">
           <button class="faq-q">
-            <span>How do I know my WhatsApp business number won't be banned?</span>
-            <span>+</span>
-          </button>
-          <div class="faq-a">
-            We ONLY use Meta's Official WABA Cloud API key registered directly in your Meta Business Manager. We never use unofficial scrapers or browser bots that trigger bans.
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <button class="faq-q">
-            <span>What happens if a client disputes a bill or asks for extra time?</span>
+            <span>What happens if a client disputes an invoice or asks for more time?</span>
             <span>+</span>
           </button>
           <div class="faq-a">
@@ -340,15 +421,15 @@
       <form id="founder-audit-form">
         <div class="form-group">
           <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="e.g. Rajesh Kumar" required>
+          <input type="text" class="field-input" placeholder="e.g. Rajesh Kumar" required>
         </div>
         <div class="form-group">
           <label class="form-label">Company Name & Industry</label>
-          <input type="text" class="form-input" placeholder="e.g. Acme Wholesale (B2B Distribution)" required>
+          <input type="text" class="field-input" placeholder="e.g. Acme Wholesale (B2B Distribution)" required>
         </div>
         <div class="form-group">
           <label class="form-label">WhatsApp Number / Email</label>
-          <input type="text" class="form-input" placeholder="+91 98765 43210 / name@company.com" required>
+          <input type="text" class="field-input" placeholder="+91 98765 43210 / name@company.com" required>
         </div>
         <div class="form-group">
           <label class="form-label">Primary Business Challenge</label>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LONG-FORM EDITORIAL DIRECT RESPONSE LOGIC
+   10/10 WORLD-CLASS INTERACTIVE WIDGET CONTROLLERS
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,9 +7,88 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initFounderModal();
   initTelemetryTicker();
+  initWhatsAppSimulator();
+  initDsoCalculator();
 });
 
-/* 1. File Inspector Tabs */
+/* 1. Interactive WhatsApp Simulator Widget */
+function initWhatsAppSimulator() {
+  const simBtns = document.querySelectorAll('.sim-btn');
+  const chatDisplay = document.getElementById('chat-simulator-display');
+
+  const scenarios = {
+    'flaky': `
+      <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
+      <div class="chat-bubble chat-out" style="background: #7f1d1d;">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
+      <div class="chat-bubble chat-in" style="color: #f87171;">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
+    `,
+    'waba_harness': `
+      <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
+      <div class="chat-bubble chat-out">[Official WABA Harness] Hello Rajesh ji. According to your verified JMBT ledger as of 2:30 PM:
+Total Dues: ₹15,711.00
+Due Date: Aug 5, 2026
+Verified Payment Link: https://pay.jmbt.in/inv_8492
+
+Replies are anchored to your official ledger.</div>
+      <div class="chat-bubble chat-in" style="color: #34d399;">✅ SUCCESS: 100% Schema Validated | 0% Numeric Error | Verified WABA Template.</div>
+    `,
+    'disputed': `
+      <div class="chat-bubble chat-in">We received a damaged box in invoice #8492. We are holding payment until replacement arrives.</div>
+      <div class="chat-bubble chat-out" style="background: #1e293b;">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
+      <div class="chat-bubble chat-in" style="color: #fbbf24;">⚡ HITL PAUSE: Client #92 flagged in SOUL.md. 0 automated spam messages sent.</div>
+    `
+  };
+
+  simBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      simBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const scenarioKey = btn.getAttribute('data-scenario');
+      if (scenarios[scenarioKey]) {
+        chatDisplay.innerHTML = scenarios[scenarioKey];
+      }
+    });
+  });
+}
+
+/* 2. Interactive DSO & ROI Calculator Widget */
+function initDsoCalculator() {
+  const amountSlider = document.getElementById('calc-amount-slider');
+  const dsoSlider = document.getElementById('calc-dso-slider');
+  const amountValLabel = document.getElementById('calc-amount-label');
+  const dsoValLabel = document.getElementById('calc-dso-label');
+  const unlockedCashLabel = document.getElementById('calc-unlocked-cash');
+  const dsoReductionLabel = document.getElementById('calc-dso-reduced');
+
+  function updateCalc() {
+    if (!amountSlider || !dsoSlider) return;
+    
+    const amountInLakhs = parseFloat(amountSlider.value);
+    const currentDsoDays = parseInt(dsoSlider.value);
+
+    amountValLabel.textContent = `₹${amountInLakhs.toFixed(1)} Lakhs`;
+    dsoValLabel.textContent = `${currentDsoDays} Days`;
+
+    // Calculation logic: Harness reduces DSO by average 40%
+    const reducedDays = Math.round(currentDsoDays * 0.4);
+    const newDsoDays = currentDsoDays - reducedDays;
+    
+    // Cash unlocked = (Amount / DSO) * Reduced Days
+    const cashUnlockedInLakhs = (amountInLakhs / currentDsoDays) * reducedDays;
+
+    unlockedCashLabel.textContent = `₹${cashUnlockedInLakhs.toFixed(2)} Lakhs`;
+    dsoReductionLabel.textContent = `${currentDsoDays}d → ${newDsoDays}d (${reducedDays} days faster)`;
+  }
+
+  if (amountSlider && dsoSlider) {
+    amountSlider.addEventListener('input', updateCalc);
+    dsoSlider.addEventListener('input', updateCalc);
+    updateCalc();
+  }
+}
+
+/* 3. File Inspector Tabs */
 function initInspectorTabs() {
   const tabs = document.querySelectorAll('.inspector-tab');
   const codeDisplay = document.getElementById('inspector-code-display');
@@ -72,7 +151,7 @@ function initInspectorTabs() {
   });
 }
 
-/* 2. FAQ Accordion */
+/* 4. FAQ Accordion */
 function initFaqAccordion() {
   const faqCards = document.querySelectorAll('.faq-card');
 
@@ -88,7 +167,7 @@ function initFaqAccordion() {
   });
 }
 
-/* 3. Founder Booking Modal */
+/* 5. Founder Booking Modal */
 function initFounderModal() {
   const modal = document.getElementById('founder-modal');
   const triggerBtns = document.querySelectorAll('.open-modal');
@@ -124,7 +203,7 @@ function initFounderModal() {
   }
 }
 
-/* 4. Live Telemetry Ticker */
+/* 6. Live Telemetry Ticker */
 function initTelemetryTicker() {
   const textEl = document.getElementById('live-ticker');
   const items = [
