@@ -1,18 +1,18 @@
 /* ==========================================================================
-   INTERACTIVE CONTROLLERS — FOUNDER MANIFESTO & HARNESS STUDIO
+   LONG-FORM EDITORIAL DIRECT RESPONSE LOGIC
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPlayground();
+  initInspectorTabs();
   initFaqAccordion();
-  initBookingModal();
+  initFounderModal();
   initTelemetryTicker();
 });
 
-/* 1. Code & File Playground Switcher */
-function initPlayground() {
-  const tabs = document.querySelectorAll('.playground-tab');
-  const codeViewer = document.getElementById('code-viewer');
+/* 1. File Inspector Tabs */
+function initInspectorTabs() {
+  const tabs = document.querySelectorAll('.inspector-tab');
+  const codeDisplay = document.getElementById('inspector-code-display');
 
   const files = {
     'AGENTS.md': `/* ==========================================================================
@@ -66,82 +66,80 @@ function initPlayground() {
 
       const fileName = tab.getAttribute('data-file');
       if (files[fileName]) {
-        codeViewer.textContent = files[fileName];
+        codeDisplay.textContent = files[fileName];
       }
     });
   });
 }
 
-/* 2. FAQ Accordion Controller */
+/* 2. FAQ Accordion */
 function initFaqAccordion() {
-  const faqRows = document.querySelectorAll('.faq-row');
+  const faqCards = document.querySelectorAll('.faq-card');
 
-  faqRows.forEach(row => {
-    const btn = row.querySelector('.faq-btn');
-    btn.addEventListener('click', () => {
-      const isActive = row.classList.contains('active');
-      faqRows.forEach(r => r.classList.remove('active'));
+  faqCards.forEach(card => {
+    const qBtn = card.querySelector('.faq-q');
+    qBtn.addEventListener('click', () => {
+      const isActive = card.classList.contains('active');
+      faqCards.forEach(c => c.classList.remove('active'));
       if (!isActive) {
-        row.classList.add('active');
+        card.classList.add('active');
       }
     });
   });
 }
 
-/* 3. Modal Booking Form Controller */
-function initBookingModal() {
-  const modalBg = document.getElementById('booking-modal-bg');
-  const triggerBtns = document.querySelectorAll('.open-modal-trigger');
-  const closeBtn = document.querySelector('.modal-close-btn');
-  const bookingForm = document.getElementById('audit-booking-form');
+/* 3. Founder Booking Modal */
+function initFounderModal() {
+  const modal = document.getElementById('founder-modal');
+  const triggerBtns = document.querySelectorAll('.open-modal');
+  const closeBtn = document.querySelector('.modal-close');
+  const form = document.getElementById('founder-audit-form');
 
   triggerBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modalBg.classList.add('active');
+      modal.classList.add('active');
     });
   });
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      modalBg.classList.remove('active');
+      modal.classList.remove('active');
     });
   }
 
-  if (modalBg) {
-    modalBg.addEventListener('click', (e) => {
-      if (e.target === modalBg) {
-        modalBg.classList.remove('active');
-      }
-    });
-  }
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
 
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
+  if (form) {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Thank you! Your Problem Audit Request has been received. The founder will personally review your workflow and contact you within 4 hours.');
-      modalBg.classList.remove('active');
-      bookingForm.reset();
+      alert('Thank you! Your Problem Audit request has been received. The founder will personally review your workflow and contact you within 4 hours.');
+      modal.classList.remove('active');
+      form.reset();
     });
   }
 }
 
-/* 4. Telemetry Ticker Simulation */
+/* 4. Live Telemetry Ticker */
 function initTelemetryTicker() {
-  const tickerEl = document.getElementById('live-ticker-text');
-  const logs = [
-    "[Meta WABA Official API] Dispatched ledger_personal_remind to +9198*** -> Status: DELIVERED (200 OK)",
-    "[Schema Gate] Validation PASSED for client_id #4102 | total_owed: ₹15,711.00",
-    "[HITL Engine] Client #92 (Chacha Sanoj Sah) PAUSED -> Active Dispute Flagged",
-    "[System Lock] Lock 'dispatch_run_8492' verified -> 0 duplicate messages sent",
+  const textEl = document.getElementById('live-ticker');
+  const items = [
+    "[Meta WABA Cloud API] Dispatched ledger_personal_remind -> Status: DELIVERED (200 OK)",
+    "[ICM Protocol] Read AGENTS.md & SOUL.md -> 0% Numeric Error Gate Validated",
+    "[Smart HITL] Client #92 (Chacha Sanoj Sah) PAUSED -> Active Dispute Flagged",
+    "[System Lock] Lock 'dispatch_run_8492' verified -> 0 Duplicate Messages Sent",
     "[Telemetry Reconcile] ₹23,422.00 payment webhook received -> Client ledger updated"
   ];
 
-  let i = 0;
-  if (tickerEl) {
+  let idx = 0;
+  if (textEl) {
     setInterval(() => {
-      i = (i + 1) % logs.length;
-      tickerEl.textContent = logs[i];
+      idx = (idx + 1) % items.length;
+      textEl.textContent = items[idx];
     }, 4500);
   }
 }
