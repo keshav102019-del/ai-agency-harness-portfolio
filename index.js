@@ -218,7 +218,7 @@ function initInspectorTabs() {
 5. CONFUSING DATA: Alert owner on WhatsApp and isolate corrupt record immediately.`,
 
     'clientautomation.md': `/* ==========================================================================
-   clientautomation.md (Render Execution Queue File)
+   clientautomation.md (24/7 VPS Local Execution Queue File)
    ========================================================================== */
 
 | Client Name | Phone Number | Total Due Amount | Status |

@@ -23,14 +23,14 @@ get_header(); ?>
       <div style="display: flex; align-items: center; gap: 0.85rem;">
         <span class="live-badge"><span class="pulse"></span> DIRECT META CLOUD API: 100% OPERATIONAL</span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span style="color: #94A3B8; font-size: 0.825rem;">Render Queue Sync: <strong style="color: #F8FAFC;">Active</strong></span>
+        <span style="color: #94A3B8; font-size: 0.825rem;">24/7 Dedicated VPS: <strong style="color: #F8FAFC;">Active</strong></span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span style="color: #94A3B8; font-size: 0.825rem;">Sovereign Architecture: <strong style="color: var(--accent-gold-bright);">ICM + OKF Governed</strong></span>
+        <span style="color: #94A3B8; font-size: 0.825rem;">Local Data Storage: <strong style="color: var(--accent-emerald-bright);">100% Secure & Sovereign</strong></span>
       </div>
       <div style="display: flex; align-items: center; gap: 1rem; color: #94A3B8; font-size: 0.8rem;">
         <span>Free Direct Meta Keys: <strong style="color: var(--accent-emerald-bright);">0% Markup Tax</strong></span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">23:55:42</span>
+        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">00:00:59</span>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ get_header(); ?>
       <div class="kicker-pill">
         <span>🟢 B2B REVENUE AUTOMATION & CUSTOM AGENT HARNESSES</span>
         <span>•</span>
-        <span>NO AI SLOP</span>
+        <span>24/7 VPS LOCAL DATA SOVEREIGNTY</span>
       </div>
 
       <h1 class="main-headline">
@@ -82,7 +82,7 @@ get_header(); ?>
       </div>
 
       <p style="font-size: 1.25rem; color: var(--text-primary); font-weight: 400; max-width: 900px; margin: 0 auto 3rem; line-height: 1.85;">
-        Everyone on the internet is marketing AI—claiming <em>"AI can automate everything."</em> But when it comes to real business tasks, AI agents hallucinate, cascade into bugs, and fail. We engineer <strong>Custom Agent Harnesses</strong> for WhatsApp Business API and Email Revenue Operations—built with strict context control, direct Meta API keys, and a <strong>30-Day Co-Deployed Output Guarantee</strong>.
+        Everyone on the internet is marketing AI—claiming <em>"AI can automate everything."</em> But when it comes to real business tasks, AI agents hallucinate, cascade into bugs, and fail. We engineer <strong>Custom Agent Harnesses</strong> for WhatsApp Business API and Email Revenue Operations—deployed 24/7 on dedicated VPS with <strong>100% local sovereign data storage, zero cloud leaks, and a 30-Day Co-Deployed Output Guarantee</strong>.
       </p>
 
       <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; margin-bottom: 4rem;">
@@ -109,8 +109,8 @@ get_header(); ?>
             <div class="proof-label">Active Client Ledgers Tracked</div>
           </div>
           <div>
-            <div class="proof-val counter-val" data-target="50000" data-prefix="₹" data-suffix="/mo" style="color: var(--accent-emerald);">₹50k/mo</div>
-            <div class="proof-label">Saved On Staff Salaries</div>
+            <div class="proof-val counter-val" data-target="100" data-prefix="" data-suffix="%" style="color: var(--accent-emerald);">100%</div>
+            <div class="proof-label">Local Data Sovereignty (VPS)</div>
           </div>
           <div>
             <div class="proof-val counter-val" data-target="0" data-prefix="" data-suffix=" Bans" style="color: var(--accent-emerald);">0 Bans</div>
@@ -183,7 +183,7 @@ get_header(); ?>
     <!-- SECTION 2: WHAT WE ENGINEER -->
     <section id="solutions" class="section-wrap">
       <h2 class="section-title">What We Engineer: Custom Agent Harnesses</h2>
-      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact revenue operations.</p>
+      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact revenue operations, running 24/7 on your dedicated VPS.</p>
 
       <div class="bento-grid-3col">
         <div class="bento-card">
@@ -212,16 +212,16 @@ get_header(); ?>
           </ul>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card" style="border-color: var(--border-emerald); background: rgba(16, 185, 129, 0.02);">
           <span class="bento-badge badge-emerald">APPLICATION 03</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">Internal Operations & Sovereign Ledger Harness</h4>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">24/7 VPS Sovereign Storage & Ledger Harness</h4>
           <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
-            Ingests custom business records, ERP data, or Markdown ledgers (`.md`). Simple enough that non-technical founders and family members can open, inspect, and update rules in plain language.
+            Runs continuously on your dedicated 24/7 VPS dashboard with <strong>100% local sovereign data storage</strong>. Your ledgers stay locally on your machine—zero third-party cloud data leaks, zero database exposure, zero hacking vulnerabilities.
           </p>
           <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-            <li>Plain-Text Sovereign File Ownership (`.md`)</li>
-            <li>30-Day Co-Deployment Output Guarantee</li>
-            <li>Zero Vendor Lock-In & Zero SaaS Subscriptions</li>
+            <li>100% Local Data Ownership & Zero Cloud Leaks</li>
+            <li>24/7 Continuous Autonomous VPS Execution</li>
+            <li>Plain-Text Sovereign File Inspection (`.md`)</li>
           </ul>
         </div>
       </div>
@@ -444,6 +444,13 @@ get_header(); ?>
               <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 Advanced Sovereign Markdown Parsing</td>
             </tr>
             <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Data Privacy & Security</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-red);">🔴 Third-Party SaaS Storage</td>
+              <td style="padding: 1.15rem 1.5rem;">Closed Cloud DB</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-red);">🔴 External Webhooks</td>
+              <td style="padding: 1.15rem 1.5rem; color: var(--accent-emerald); font-weight: 700; background: var(--accent-emerald-soft);">🟢 100% Local Sovereign Data (24/7 VPS)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
               <td style="padding: 1.15rem 1.5rem; font-weight: 600;">Zero-Hallucination Gate</td>
               <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ Rule Flowchart Only</td>
               <td style="padding: 1.15rem 1.5rem; color: var(--text-muted);">❌ None</td>
@@ -479,23 +486,23 @@ get_header(); ?>
     <!-- SECTION 6: SOVEREIGN CONTRACTS & SCHEMAS -->
     <section id="samples" class="section-wrap">
       <h2 class="section-title">Human-Readable Sovereign Contracts (Simple & Transparent)</h2>
-      <p class="section-sub">No complex black-box flowcharts. Inspect the exact Markdown files that govern your business logic.</p>
+      <p class="section-sub">No complex black-box flowcharts. Inspect the exact Markdown files that govern your business logic locally on your VPS.</p>
 
       <div class="file-inspector">
         <div class="inspector-nav">
           <div class="inspector-tabs-wrap">
             <button class="inspector-tab active" data-file="client_register.md">client Register.md (Input Rules)</button>
-            <button class="inspector-tab" data-file="clientautomation.md">clientautomation.md (Render Queue)</button>
+            <button class="inspector-tab" data-file="clientautomation.md">clientautomation.md (VPS Queue)</button>
             <button class="inspector-tab" data-file="contract.schema.json">contract.schema.json (0% Error Gate)</button>
           </div>
           <button id="btn-copy-inspector" class="btn-copy-code">Copy Code</button>
         </div>
         <pre id="inspector-code-display" class="inspector-code">/* ==========================================================================
-   client Register.md Parsing Rules (client-automation-file-skill)
+   client Register.md Parsing Rules (24/7 VPS Sovereign Local Execution)
    ========================================================================== */
 
 # CORE FILTERING PROTOCOL
-1. Read all customer records from `client Register.md`.
+1. Read all customer records from `client Register.md` (Stored 100% locally on VPS).
 2. SKIP if client status: `pause`, `Excluded`, `Disputed`, `Verification Pending`, `Reconciliation Pending`, `Temporary Pause`.
 3. SKIP if promise date is active and date has not arrived yet.
 4. SKIP if total due amount is <= ₹0.
@@ -506,13 +513,23 @@ get_header(); ?>
     <!-- SECTION 7: FAQ WITH SEARCH -->
     <section id="faq" class="section-wrap">
       <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub">Got questions about Meta WABA API integration, ledger parsing, or zero-hallucination guarantees? Search below:</p>
+      <p class="section-sub">Got questions about Meta WABA API integration, 24/7 VPS hosting, or zero-hallucination guarantees? Search below:</p>
       
       <div class="faq-search-wrap">
-        <input type="text" id="faq-search-input" class="faq-search-input" placeholder="🔍 Type to search FAQ (e.g. Meta API, ban, calculation, damaged)...">
+        <input type="text" id="faq-search-input" class="faq-search-input" placeholder="🔍 Type to search FAQ (e.g. Meta API, VPS, local data, ban, dispute)...">
       </div>
 
       <div class="faq-list">
+        <div class="faq-card">
+          <button class="faq-q">
+            <span>How is my business data kept 100% safe from cloud leaks or hacking?</span>
+            <span class="faq-q-icon">+</span>
+          </button>
+          <div class="faq-a">
+            We run your harness continuously on a dedicated 24/7 VPS with 100% local sovereign data storage. All your customer ledgers and rules live locally on your private machine—zero third-party cloud data leaks, zero external database exposure, and maximum security.
+          </div>
+        </div>
+
         <div class="faq-card">
           <button class="faq-q">
             <span>Why do you build custom software instead of selling a monthly SaaS app?</span>
