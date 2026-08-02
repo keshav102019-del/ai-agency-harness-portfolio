@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFounderModal();
   initWhatsAppSimulator();
   initDsoCalculator();
-  initJmbtCaseStudyModal();
   initSampleWorkTemplates();
 });
 
@@ -26,7 +25,7 @@ function initWhatsAppSimulator() {
     `,
     'waba_harness': `
       <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
-      <div class="chat-bubble chat-out">[Official WABA Harness] Hello Rajesh ji. According to your verified JMBT ledger as of 2:30 PM:
+      <div class="chat-bubble chat-out">[Official WABA Harness] नमस्ते Rajesh ji. According to your verified JMBT ledger as of 2:30 PM:
 Total Dues: ₹15,711.00
 Due Date: Aug 5, 2026
 Verified Payment Link: https://pay.jmbt.in/inv_8492
@@ -37,7 +36,7 @@ Replies are anchored to your official ledger.</div>
     'disputed': `
       <div class="chat-bubble chat-in">We received a damaged box in invoice #8492. We are holding payment until replacement arrives.</div>
       <div class="chat-bubble chat-out" style="background: rgba(180, 131, 70, 0.08); border: 1px solid var(--border-gold); color: var(--accent-gold);">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
-      <div class="chat-bubble chat-in" style="color: #b48346;">⚡ HITL PAUSE: Client #92 flagged in SOUL.md. 0 automated spam messages sent.</div>
+      <div class="chat-bubble chat-in" style="color: #b48346;">⚡ HITL PAUSE: Client #92 flagged in client Register.md. 0 automated spam messages sent.</div>
     `
   };
 
@@ -94,34 +93,26 @@ function initInspectorTabs() {
   if (!codeDisplay) return;
 
   const files = {
-    'AGENTS.md': `/* ==========================================================================
-   AGENTS.md — Universal Identity & Guardrail Layer (Layer 1)
+    'client_register.md': `/* ==========================================================================
+   client Register.md Parsing Rules (client-automation-file-skill)
    ========================================================================== */
 
-# IMMUTABLE SOVEREIGN CONTRACT
-- Role: Deterministic Revenue & Ledger Automation Agent
-- Engine: 100% Meta Official WhatsApp Business API (Direct WABA Cloud Key)
-- Rule 1: NEVER guess or hallucinate currency figures or ledger balances.
-- Rule 2: All automation triggers must anchor to verified database events.
-- Rule 3: Disputed client accounts trigger immediate Smart HITL Pause.
+# CORE FILTERING PROTOCOL
+1. Read all customer records from \`client Register.md\`.
+2. SKIP if client status: \`pause\`, \`Excluded\`, \`Disputed\`, \`Verification Pending\`, \`Reconciliation Pending\`, \`Temporary Pause\`.
+3. SKIP if promise date is active and date has not arrived yet.
+4. SKIP if total due amount is <= ₹0.
+5. CONFUSING DATA: Alert owner on WhatsApp and isolate corrupt record immediately.`,
 
-## TRUST & DATA BOUNDARIES
-- Allowed: Read ledger balances, dispatch Meta-approved utility templates.
-- Forbidden: Cannot issue unauthorized discounts or modify core accounts without owner key.`,
-
-    'SOUL.md': `/* ==========================================================================
-   SOUL.md — Reference Business Policies & Blacklists (Layer 4)
+    'clientautomation.md': `/* ==========================================================================
+   clientautomation.md (Render Execution Queue File)
    ========================================================================== */
 
-# BUSINESS POLICIES & RECONCILIATION RULES
-- Target Enterprise: Jai Maa Bhagwati Traders (JMBT)
-- Total Active Clients: 1,181
-- Granular Pillars: 6 (Very High Dues to Zero Balance)
-
-## SMART PAUSE & BLACKLIST RULES
-- Rule 4B: If client has active goods dispute or payment promise within 30 days -> PAUSE.
-- Active Paused Clients: 92 clients (₹2,59,440.25 total) isolated for human review.
-- Blacklisted Contact: Chacha Sanoj Sah (+918051718919) -> Manual Human Review Only.`,
+| Client Name | Phone Number | Total Due Amount | Status |
+| :--- | :--- | :--- | :--- |
+| Rajesh Hardware | +919876543210 | ₹15,711.00 | QUEUED_BUCKET_1 |
+| Verma Agri Traders | +919812345678 | ₹42,500.00 | QUEUED_BUCKET_2 |
+| Chacha Sanoj Sah | +918051718919 | ₹89,200.00 | EXCLUDED_PAUSED_DISPUTED |`,
 
     'contract.schema.json': `{
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -131,10 +122,10 @@ function initInspectorTabs() {
     "client_id": { "type": "string" },
     "clean_phone": { "type": "string", "pattern": "^\\\\+91[0-9]{10}$" },
     "total_owed": { "type": "number", "minimum": 0.01 },
-    "approved_template": { "type": "string", "enum": ["ledger_personal_remind"] },
+    "aging_bucket": { "type": "string", "enum": ["BUCKET_1", "BUCKET_2", "BUCKET_3"] },
     "hitl_status": { "type": "string", "enum": ["ELIGIBLE", "PAUSED_DISPUTED"] }
   },
-  "required": ["client_id", "clean_phone", "total_owed", "approved_template", "hitl_status"]
+  "required": ["client_id", "clean_phone", "total_owed", "aging_bucket", "hitl_status"]
 }`
   };
 
@@ -206,64 +197,24 @@ function initFounderModal() {
   }
 }
 
-/* 6. In-Depth JMBT Case Study Reader Modal */
-function initJmbtCaseStudyModal() {
-  const modal = document.getElementById('jmbt-case-study-modal');
-  if (!modal) return;
-
-  const openBtns = document.querySelectorAll('.open-jmbt-modal');
-  const closeBtns = document.querySelectorAll('.close-jmbt-modal');
-
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.classList.add('active');
-    });
-  });
-
-  closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
-}
-
-/* 7. Interactive Sample Work Template Toggles */
+/* 6. Interactive Sample Work Aging Template Toggles */
 function initSampleWorkTemplates() {
   const buttons = document.querySelectorAll('.sample-tpl-btn');
   const display = document.getElementById('sample-tpl-display');
   if (!display) return;
 
   const templates = {
-    'ledger': `
-      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Official WABA Template: ledger_personal_remind]</div>
-      Pranam {{1}} ji 🙏<br><br>
-      Jai Maa Bhagwati Traders ledger update as of {{2}}:<br>
-      • Pending Balance: ₹{{3}}<br>
-      • Due Date: {{4}}<br><br>
-      Please review your itemized invoice and complete payment via verified UPI link:<br>
-      {{5}}<br><br>
-      <em>Reply "DISPUTE" if goods were damaged or if payment was already made.</em>
+    'bucket1': `
+      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 1 Template: 1–15 Days Aging]</div>
+      नमस्ते {{name}}, आपके {{amount}} रुपये के पेमेंट की तारीख निकल गई है। आप नीचे दिए गए लिंक से सीधे पेमेंट कर सकते हैं। [पेमेंट लिंक]
     `,
-    'ack': `
-      <div style="color: var(--accent-emerald); font-weight: 600; margin-bottom: 0.5rem;">[Official WABA Template: payment_receipt_ack]</div>
-      Dhanyawad {{1}} ji! 🙏<br><br>
-      We have received your payment of ₹{{2}} against Invoice #{{3}} on {{4}}.<br>
-      Your updated ledger balance is now: ₹{{5}}.<br><br>
-      Thank you for your continued partnership with Jai Maa Bhagwati Traders.
+    'bucket2': `
+      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 2 Template: 16–30 Days Aging]</div>
+      नमस्ते {{name}}, आपके खाते में {{amount}} रुपये का बकाया (outstanding) है। हमने पुराना हिसाब (ledger) चेक किया है। अगर पेमेंट करने में कोई दिक्कत आ रही है तो बताएं।
     `,
-    'dispute': `
-      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Smart HITL Engine Alert: dispute_pause_logged]</div>
-      [SYSTEM LOG] Account #{{1}} ({{2}}) flagged active dispute: "{{3}}".<br>
-      • Automated Dunning: INSTANTLY PAUSED<br>
-      • Telemetry Status: Routed to Owner Review Queue (`SOUL.md` Rule 4B)<br>
-      • 0 automated messages dispatched until manual owner clearance.
+    'bucket3': `
+      <div style="color: var(--accent-red); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 3 Template: 31+ Days Aging]</div>
+      नमस्ते {{name}}, आपके {{amount}} रुपये का पेमेंट काफी समय से पेंडिंग है। क्या बिल या सर्विस में कोई समस्या है?
     `
   };
 
