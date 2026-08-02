@@ -30,12 +30,12 @@ get_header(); ?>
       <div style="display: flex; align-items: center; gap: 1rem; color: #94A3B8; font-size: 0.8rem;">
         <span>Free Direct Meta Keys: <strong style="color: var(--accent-emerald-bright);">0% Markup Tax</strong></span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">00:08:50</span>
+        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">00:15:09</span>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header Navigation -->
   <header class="editorial-header">
     <div class="container-wide header-flex">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo">
@@ -45,8 +45,8 @@ get_header(); ?>
       <nav style="display: flex; gap: 1.75rem; align-items: center; font-size: 0.925rem; font-weight: 500;">
         <a href="#hero-story" class="nav-link">The Truth About AI</a>
         <a href="#failures" class="nav-link">4 AI Failure Modes</a>
-        <a href="#solutions" class="nav-link">What We Build</a>
         <a href="#case-study-jmbt" class="nav-link">JMBT Patna Case Study</a>
+        <a href="#solutions" class="nav-link">What We Build</a>
         <a href="#playground" class="nav-link">Live Playground</a>
         <a href="#comparison" class="nav-link">Competitor Teardown</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -121,6 +121,7 @@ get_header(); ?>
 
     <!-- SECTION 1: THE 4 FAILURE MODES OF BUSINESS AI -->
     <section id="failures" class="section-wrap">
+      <span class="section-kicker">// 01. THE PROBLEM WITH GENERIC AI</span>
       <h2 class="section-title">The 4 Failure Modes of Business AI</h2>
       <p class="section-sub">Why off-the-shelf SaaS apps, n8n flowcharts, and generic AI agencies collapse when faced with real business operations.</p>
 
@@ -179,59 +180,12 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- SECTION 2: WHAT WE ENGINEER -->
-    <section id="solutions" class="section-wrap">
-      <h2 class="section-title">What We Engineer: Custom Agent Harnesses</h2>
-      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact revenue operations, running 24/7 on your dedicated VPS.</p>
-
-      <div class="bento-grid-3col">
-        <div class="bento-card">
-          <span class="bento-badge badge-gold">APPLICATION 01</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">WhatsApp WABA Automated Collection Harness</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
-            Direct official Meta WABA Cloud API integration with 0% ban risk and 0% markup tax. Dynamic credit aging (1–15d, 16–30d, 31+d), payment promise date tracking, and automatic Smart HITL pause on client disputes.
-          </p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-            <li>0% Calculation Error (`contract.schema.json`)</li>
-            <li>Free Direct Meta API Key Provisioning</li>
-            <li>Automatic Dispute Route to Human Staff</li>
-          </ul>
-        </div>
-
-        <div class="bento-card">
-          <span class="bento-badge badge-gold">APPLICATION 02</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">Email RevOps & Lead Routing Harness</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
-            Autonomous inbound lead routing, qualification, and B2B lifecycle nurturing. Built with strict domain reputation protection, SPF/DKIM/DMARC alignment, and zero Spamhaus blacklisting risk.
-          </p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-            <li>Zero Spamhaus / Deliverability Blacklist Risk</li>
-            <li>Custom Lead Scoring & Data Enriched Routing</li>
-            <li>Seamless CRM & Webhook Integration</li>
-          </ul>
-        </div>
-
-        <div class="bento-card" style="border-color: var(--border-emerald); background: rgba(16, 185, 129, 0.02);">
-          <span class="bento-badge badge-emerald">APPLICATION 03</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">24/7 VPS Sovereign Storage & Ledger Harness</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
-            Runs continuously on your dedicated 24/7 VPS dashboard with <strong>100% local sovereign data storage</strong>. Your ledgers stay locally on your machine—zero third-party cloud data leaks, zero database exposure, zero hacking vulnerabilities.
-          </p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-            <li>100% Local Data Ownership & Zero Cloud Leaks</li>
-            <li>24/7 Continuous Autonomous VPS Execution</li>
-            <li>Plain-Text Sovereign File Inspection (`.md`)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: THE APPROVED JMBT PATNA GROUND TRUTH CASE STUDY -->
+    <!-- SECTION 2: THE APPROVED JMBT PATNA GROUND TRUTH CASE STUDY -->
     <section id="case-study-jmbt" class="section-wrap">
       <article class="editorial-case-study">
         
         <header style="text-align: center; margin-bottom: 4rem;">
-          <span class="bento-badge badge-emerald" style="font-size: 0.85rem; padding: 0.45rem 1.35rem;">AUTHENTIC GROUND TRUTH CASE STUDY</span>
+          <span class="section-kicker">// 02. AUTHENTIC GROUND TRUTH CASE STUDY</span>
           <h2 style="font-size: 2.85rem; color: var(--text-primary); margin-top: 0.85rem; line-height: 1.2;">
             The Wholesale Credit Nightmare: How A Failed AI Workflow Taught Us What Businesses Actually Need
           </h2>
@@ -354,8 +308,57 @@ get_header(); ?>
       </article>
     </section>
 
+    <!-- SECTION 3: WHAT WE ENGINEER -->
+    <section id="solutions" class="section-wrap">
+      <span class="section-kicker">// 03. OUR SYSTEM SPECIFICATION</span>
+      <h2 class="section-title">What We Engineer: Custom Agent Harnesses</h2>
+      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact revenue operations, running 24/7 on your dedicated VPS.</p>
+
+      <div class="bento-grid-3col">
+        <div class="bento-card">
+          <span class="bento-badge badge-gold">APPLICATION 01</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">WhatsApp WABA Automated Collection Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Direct official Meta WABA Cloud API integration with 0% ban risk and 0% markup tax. Dynamic credit aging (1–15d, 16–30d, 31+d), payment promise date tracking, and automatic Smart HITL pause on client disputes.
+          </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>0% Calculation Error (`contract.schema.json`)</li>
+            <li>Free Direct Meta API Key Provisioning</li>
+            <li>Automatic Dispute Route to Human Staff</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <span class="bento-badge badge-gold">APPLICATION 02</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">Email RevOps & Lead Routing Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Autonomous inbound lead routing, qualification, and B2B lifecycle nurturing. Built with strict domain reputation protection, SPF/DKIM/DMARC alignment, and zero Spamhaus blacklisting risk.
+          </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>Zero Spamhaus / Deliverability Blacklist Risk</li>
+            <li>Custom Lead Scoring & Data Enriched Routing</li>
+            <li>Seamless CRM & Webhook Integration</li>
+          </ul>
+        </div>
+
+        <div class="bento-card" style="border-color: var(--border-emerald); background: rgba(16, 185, 129, 0.02);">
+          <span class="bento-badge badge-emerald">APPLICATION 03</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">24/7 VPS Sovereign Storage & Ledger Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Runs continuously on your dedicated 24/7 VPS dashboard with <strong>100% local sovereign data storage</strong>. Your ledgers stay locally on your machine—zero third-party cloud data leaks, zero database exposure, zero hacking vulnerabilities.
+          </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>100% Local Data Ownership & Zero Cloud Leaks</li>
+            <li>24/7 Continuous Autonomous VPS Execution</li>
+            <li>Plain-Text Sovereign File Inspection (`.md`)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 4: LIVE PLAYGROUND -->
     <section id="playground" class="section-wrap">
+      <span class="section-kicker">// 04. INTERACTIVE VERIFICATION</span>
       <h2 class="section-title">Live Custom Harness Playground</h2>
       <p class="section-sub">Test how our verified WABA Harness enforces 100% deterministic outputs vs how generic AI agents hallucinate.</p>
 
@@ -406,6 +409,7 @@ get_header(); ?>
 
     <!-- SECTION 5: COMPETITOR COMPARISON TEARDOWN -->
     <section id="comparison" class="section-wrap">
+      <span class="section-kicker">// 05. MARKET COMPARISON</span>
       <h2 class="section-title">Custom Agent Harness vs The Market</h2>
       <p class="section-sub">Why off-the-shelf WhatsApp SaaS apps (Wati, AiSensy), Khatabook, and n8n freelancers fail in real business operations.</p>
 
@@ -482,8 +486,9 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- SECTION 7: FAQ WITH SEARCH -->
+    <!-- SECTION 6: FAQ WITH SEARCH -->
     <section id="faq" class="section-wrap">
+      <span class="section-kicker">// 06. FREQUENTLY ASKED QUESTIONS</span>
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-sub">Got questions about Meta WABA API integration, 24/7 VPS hosting, or zero-hallucination guarantees? Search below:</p>
       
@@ -554,8 +559,9 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- SECTION 8: AUDIT CTA -->
+    <!-- SECTION 7: AUDIT CTA -->
     <section id="audit" class="section-wrap" style="text-align: center; border-bottom: none; padding-bottom: 7rem;">
+      <span class="section-kicker">// 07. NEXT STEPS</span>
       <h2 style="font-size: 3rem; margin-bottom: 1.25rem;">Schedule an Operational Problem Audit</h2>
       <p style="color: var(--text-secondary); max-width: 660px; margin: 0 auto 2.75rem; font-size: 1.15rem;">
         We limit monthly partner intake to 2 companies to ensure dedicated custom engineering and zero-error deployment.
