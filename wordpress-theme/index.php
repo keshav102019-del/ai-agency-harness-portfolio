@@ -12,7 +12,7 @@ get_header(); ?>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php wp_title( '|', true, 'right' ); ?> Agent Harness Studio | Custom AI Agent Architecture & JMBT Case Study</title>
+  <title><?php wp_title( '|', true, 'right' ); ?> Agent Harness Studio | Custom AI Agent Architecture & Revenue Automation</title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -30,7 +30,7 @@ get_header(); ?>
       <div style="display: flex; align-items: center; gap: 1rem; color: #94A3B8; font-size: 0.8rem;">
         <span>Free Direct Meta Keys: <strong style="color: var(--accent-emerald-bright);">0% Markup Tax</strong></span>
         <span style="color: rgba(255, 255, 255, 0.4);">|</span>
-        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">23:33:00</span>
+        <span id="live-ticker-time" style="font-family: var(--font-mono); color: #F8FAFC;">23:37:36</span>
       </div>
     </div>
   </div>
@@ -45,7 +45,8 @@ get_header(); ?>
       <nav style="display: flex; gap: 1.75rem; align-items: center; font-size: 0.925rem; font-weight: 500;">
         <a href="#hero-story" class="nav-link">The Truth About AI</a>
         <a href="#failures" class="nav-link">4 AI Failure Modes</a>
-        <a href="#case-study-jmbt" class="nav-link">Father's Story</a>
+        <a href="#solutions" class="nav-link">What We Build</a>
+        <a href="#case-study-jmbt" class="nav-link">JMBT Patna Story</a>
         <a href="#playground" class="nav-link">Live Playground</a>
         <a href="#comparison" class="nav-link">Competitor Teardown</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
@@ -60,37 +61,33 @@ get_header(); ?>
 
   <main class="container-wide">
 
-    <!-- HERO SECTION: The Founder Manifesto -->
+    <!-- HERO SECTION: Radical New High-Converting Positioning -->
     <section id="hero-story" class="hero-section">
       <div class="kicker-pill">
-        <span>🟢 WHY AGENTS FAIL IN REAL BUSINESS</span>
+        <span>🟢 B2B REVENUE AUTOMATION & CUSTOM AGENT HARNESSES</span>
         <span>•</span>
-        <span>WE SELL DESIRED OUTPUT, NOT AI SLOP</span>
+        <span>NO AI SLOP</span>
       </div>
 
       <h1 class="main-headline">
-        "Everyone Says AI Can Automate Everything. But The Moment You Ask An Agent To Manage Real Business Ledgers, <span>It Gives You Hallucinations, Bug Cascades, and AI Slop."</span>
+        "Stop Buying $5,000 'AI Agents' That Hallucinate Balances, <span>Trigger WhatsApp Bans, And Crash Your Business Operations."</span>
       </h1>
 
       <div class="byline-wrap">
         <div class="author-img">AH</div>
         <div style="text-align: left;">
-          <div style="color: var(--text-primary); font-weight: 700; font-size: 1.05rem;">By Keshav Kumar, Son & System Architect</div>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">For Manoj Kumar (Founder, Jai Maa Bhagwati Traders, Patna)</div>
+          <div style="color: var(--text-primary); font-weight: 700; font-size: 1.05rem;">By Keshav Kumar, Systems Architect & Practitioner</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Creator of Custom Agent Harness Architecture (ICM + OKF Sovereign Files)</div>
         </div>
       </div>
 
-      <p style="font-size: 1.25rem; color: var(--text-primary); font-weight: 400; max-width: 880px; margin: 0 auto 3rem; line-height: 1.85;">
-        I watched my father Manoj Kumar struggle every day running <em>Jai Maa Bhagwati Traders (JMBT)</em>—his wholesale cement, TMT steel rod, and pipe business in Patna. Across the region, over <strong>1,181 retail contractors and dealers</strong> maintained continuous rolling credit balances. 
-        <br><br>
-        Paying ₹30,000 to ₹50,000/month for account managers was a heavy burden, so we turned to AI. For 3 grueling months, I sat at my laptop fixing bug after bug. I learned the hard way what the internet won't tell you: <strong>AI agents are fundamentally built to guess.</strong> In a real business with 5 to 10 years of financial data, one single AI hallucination triggers a <strong>catastrophic bug cascade</strong>—fixing 1 error creates 3 new ones. Token costs explode, and your father is left asking, <em>"What the hell is going on here?"</em>
-        <br><br>
-        That’s when I stopped building generic agents and engineered a <strong>Custom Agent Harness</strong> combining ICM (Interpretable Context Methodology) and OKF (Open Knowledge Format). We unblocked cash flow, saved ₹50k/mo on staff, and eliminated hallucinations completely—with 0 Meta bans.
+      <p style="font-size: 1.25rem; color: var(--text-primary); font-weight: 400; max-width: 900px; margin: 0 auto 3rem; line-height: 1.85;">
+        We don't sell generic chatbots, fragile n8n flowcharts, or monthly SaaS wrappers. We engineer <strong>Custom Agent Harnesses</strong> for WhatsApp Business API and Email Revenue Operations—built directly around your unique credit ledgers, zero Meta account bans, and a <strong>30-Day Co-Deployed Output Guarantee</strong>.
       </p>
 
       <div style="display: flex; gap: 1.25rem; justify-content: center; align-items: center; margin-bottom: 4rem;">
-        <a href="#case-study-jmbt" class="btn-cta" style="padding: 1.1rem 2.4rem; font-size: 1rem;">Read Full JMBT Patna Story ↓</a>
-        <a href="#playground" class="btn-cta-secondary" style="padding: 1.1rem 2.4rem; font-size: 1rem;">Test Live Engine Playground ↓</a>
+        <a href="#audit" class="btn-cta open-modal" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">Book 15-Minute Operational Audit &rarr;</a>
+        <a href="#case-study-jmbt" class="btn-cta-secondary" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">Read Father's Patna Story (JMBT) ↓</a>
       </div>
 
       <!-- Hero Visual Showcase -->
@@ -109,11 +106,11 @@ get_header(); ?>
           </div>
           <div>
             <div class="proof-val counter-val" data-target="1181" data-prefix="" data-suffix=" Ledgers" style="color: var(--text-primary);">1,181 Ledgers</div>
-            <div class="proof-label">Active Client Ledgers Tracked</div>
+            <div class="proof-label">Active Client Ledgers Managed</div>
           </div>
           <div>
             <div class="proof-val counter-val" data-target="50000" data-prefix="₹" data-suffix="/mo" style="color: var(--accent-emerald);">₹50k/mo</div>
-            <div class="proof-label">Saved On Manager Salaries</div>
+            <div class="proof-label">Saved On Staff Salaries</div>
           </div>
           <div>
             <div class="proof-val counter-val" data-target="0" data-prefix="" data-suffix=" Bans" style="color: var(--accent-emerald);">0 Bans</div>
@@ -123,31 +120,31 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- SECTION 1: THE 4 REAL FAILURES OF BUSINESS AI & AUTOMATION -->
+    <!-- SECTION 1: THE 4 FAILURE MODES OF BUSINESS AI (RADICALLY EXPANDED) -->
     <section id="failures" class="section-wrap">
       <h2 class="section-title">The 4 Failure Modes of Business AI</h2>
-      <p class="section-sub">Why accuracy is the ultimate bottleneck and why off-the-shelf SaaS tools, n8n flowcharts, and agencies break in real business environments.</p>
+      <p class="section-sub">Why off-the-shelf SaaS apps, n8n flowcharts, and generic AI agencies collapse when faced with real business operations.</p>
 
       <div class="bento-grid-2col" style="margin-bottom: 2.5rem;">
         <div class="bento-card">
           <span class="bento-badge badge-red">FAILURE MODE 01</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">1. The Accuracy Bottleneck & Confident Hallucinations</h4>
+          <h4 style="font-size: 1.35rem; margin-bottom: 0.85rem; color: var(--text-primary);">1. The Accuracy Bottleneck & Confident Hallucination Cascades</h4>
           <p style="font-size: 0.975rem; color: var(--text-secondary);">
             <em>"My biggest fear isn't that AI fails—it's <strong>confident hallucinations</strong>. The AI does the wrong thing with supreme confidence."</em>
           </p>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
-            General-purpose LLMs are probabilistic. In a business with financial ledgers, a 95% accuracy rate means 5% catastrophic failure. One wrong balance message fires duplicate spams 20 to 30 times, triggering a <strong>bug cascade</strong> where fixing 1 error creates 3 new ones.
+            General-purpose AI models are probabilistic. In a business with financial ledgers, a 95% accuracy rate means 5% catastrophic failure. One wrong balance calculation or hallucinated 40% discount triggers a <strong>bug cascade</strong>—where fixing 1 error creates 3 new bugs, sending duplicate spams 20 to 30 times and destroying client trust.
           </p>
         </div>
 
         <div class="bento-card">
           <span class="bento-badge badge-red">FAILURE MODE 02</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">2. The 3-Month Laptop Headache & Hidden Maintenance</h4>
+          <h4 style="font-size: 1.35rem; margin-bottom: 0.85rem; color: var(--text-primary);">2. The 3-Month Laptop Headache & Token Runaway Trap</h4>
           <p style="font-size: 0.975rem; color: var(--text-secondary);">
             <em>"The subscription cost isn't what kills you—<strong>the real cost is the hidden maintenance</strong>."</em>
           </p>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
-            Building unconstrained agents forces you to sit at your laptop every day. Input token costs run away ($400/month for $50 worth of output), latency delays messages, and the workflow becomes so complex that non-technical founders and staff cannot understand or use it.
+            Building heavy multi-agent workflows without context constraints forces you to sit at your laptop every single day debugging errors. Input token costs run away ($400/month for $50 worth of output), latency creates messaging lag, and non-technical staff cannot understand or manage the system.
           </p>
         </div>
       </div>
@@ -155,23 +152,23 @@ get_header(); ?>
       <div class="bento-grid-2col">
         <div class="bento-card">
           <span class="bento-badge badge-red">FAILURE MODE 03</span>
-          <h4 style="font-size: 1.3rem; margin-bottom: 0.85rem;">3. The "One-Size-Fits-All" Agency & n8n House of Cards</h4>
+          <h4 style="font-size: 1.35rem; margin-bottom: 0.85rem; color: var(--text-primary);">3. The "One-Size-Fits-All" Agency & n8n House of Cards</h4>
           <p style="font-size: 0.975rem; color: var(--text-secondary);">
             <em>"90% of AI agencies sell <strong>demos with a payment form</strong>. Complex n8n flowcharts are a <strong>house of cards</strong>."</em>
           </p>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
-            Freelancers charging ₹10,000 to ₹50,000 sell the exact same generic n8n/Zapier template to everyone. They don't understand your business, your credit terms, or your promise dates. One API update or client typo shatters the entire workflow, and the freelancer ghosts you.
+            Freelancers charging ₹10,000 to ₹50,000 sell the exact same copy-paste n8n/Zapier workflow to everyone. They don't understand your business, your credit terms, or your payment promise dates. One API update or client typo shatters the entire workflow, and the freelancer ghosts you.
           </p>
         </div>
 
         <div class="bento-card" style="border-color: var(--border-red); background: rgba(239, 68, 68, 0.02);">
           <span class="bento-badge badge-red">FAILURE MODE 04</span>
-          <h4 style="font-size: 1.3rem; color: var(--accent-red); margin-bottom: 0.85rem;">4. WhatsApp Scraper Account Bans & Middleman Markup Taxes</h4>
+          <h4 style="font-size: 1.35rem; color: var(--accent-red); margin-bottom: 0.85rem;">4. WhatsApp Scraper Account Bans & Middleman Markup Taxes</h4>
           <p style="font-size: 0.975rem; color: var(--text-secondary);">
             <em>"Using unofficial scrapers got our 10-year-old business WhatsApp line permanently banned."</em>
           </p>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
-            Unapproved browser scrapers (WAHA, Baileys, Selenium) are detected by Meta's network layer, resulting in <strong>permanent account bans</strong> that wipe out years of customer history and trust. Meanwhile, third-party SaaS platforms (Wati, AiSensy) charge steep monthly subscriptions plus a 10%–39% markup tax on Meta messages.
+            Cheap tools use unapproved browser scrapers (WAHA, Baileys, Selenium) that get detected by Meta's network algorithms, resulting in <strong>permanent account bans</strong> that wipe out 10+ years of customer contacts. Meanwhile, third-party SaaS platforms (Wati, AiSensy) charge heavy monthly subscriptions plus a 10%–39% markup tax on Meta messages.
           </p>
         </div>
       </div>
@@ -183,39 +180,54 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- SECTION 2: WHAT IS A CUSTOM AGENT HARNESS -->
-    <section id="harness-concept" class="section-wrap">
-      <h2 class="section-title">You Don't Need An AI Agent. You Need A Custom Harness.</h2>
-      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact business operations.</p>
+    <!-- SECTION 2: WHAT WE BUILD (NICHE APPLICATIONS) -->
+    <section id="solutions" class="section-wrap">
+      <h2 class="section-title">What We Engineer: Custom Agent Harnesses</h2>
+      <p class="section-sub">We don't build generic chatbots. We build custom sovereign file harnesses tailored to your exact revenue operations.</p>
 
       <div class="bento-grid-3col">
         <div class="bento-card">
-          <span class="bento-badge badge-gold">PILLAR 01</span>
-          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Custom Business Ingestion</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary);">
-            A harness cannot be a copy-paste SaaS product. We sit with your business, analyze your ledgers, your credit habits, and your specific operational edge cases first.
+          <span class="bento-badge badge-gold">APPLICATION 01</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">WhatsApp WABA Automated Collection Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Direct official Meta WABA Cloud API integration with 0% ban risk and 0% markup tax. Dynamic credit aging (1–15d, 16–30d, 31+d), payment promise date tracking, and automatic Smart HITL pause on client disputes.
           </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>0% Calculation Error (`contract.schema.json`)</li>
+            <li>Free Direct Meta API Key Provisioning</li>
+            <li>Automatic Dispute Route to Human Staff</li>
+          </ul>
         </div>
 
         <div class="bento-card">
-          <span class="bento-badge badge-gold">PILLAR 02</span>
-          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">ICM + OKF Sovereign File Architecture</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary);">
-            We govern AI context using human-readable Markdown (`.md`) files. The system is so <strong>simple</strong> that any non-technical family member or staff member can read the rules in plain language and understand what is happening.
+          <span class="bento-badge badge-gold">APPLICATION 02</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">Email RevOps & Lead Routing Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Autonomous inbound lead routing, qualification, and B2B lifecycle nurturing. Built with strict domain reputation protection, SPF/DKIM/DMARC alignment, and zero Spamhaus blacklisting risk.
           </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>Zero Spamhaus / Deliverability Blacklist Risk</li>
+            <li>Custom Lead Scoring & Data Enriched Routing</li>
+            <li>Seamless CRM & Webhook Integration</li>
+          </ul>
         </div>
 
         <div class="bento-card">
-          <span class="bento-badge badge-emerald">PILLAR 03</span>
-          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">30-Day Co-Deployment & Output Guarantee</h4>
-          <p style="font-size: 0.925rem; color: var(--text-secondary);">
-            We don't sell flowcharts and leave. We stay with your business for 30 days, test real-world edge cases (typos, promise dates, disputes), and evolve the harness until it delivers guaranteed <strong>Desired Output</strong>.
+          <span class="bento-badge badge-emerald">APPLICATION 03</span>
+          <h4 style="font-size: 1.3rem; margin-bottom: 0.65rem; color: var(--text-primary);">Internal Operations & Sovereign Ledger Harness</h4>
+          <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            Ingests custom business records, ERP data, or Markdown ledgers (`.md`). Simple enough that non-technical founders and family members can open, inspect, and update rules in plain language.
           </p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+            <li>Plain-Text Sovereign File Ownership (`.md`)</li>
+            <li>30-Day Co-Deployment Output Guarantee</li>
+            <li>Zero Vendor Lock-In & Zero SaaS Subscriptions</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: JMBT PATNA GROUND TRUTH CASE STUDY -->
+    <!-- SECTION 3: THE TRUE JMBT PATNA FOUNDER STORY -->
     <section id="case-study-jmbt" class="section-wrap">
       <article class="editorial-case-study">
         
@@ -252,7 +264,7 @@ get_header(); ?>
         </aside>
 
         <!-- Narrative Story Content -->
-        <div class="cs-narrative" style="max-width: 800px; margin: 0 auto; font-size: 1.15rem; line-height: 1.9; color: #1e293b;">
+        <div class="cs-narrative" style="max-width: 820px; margin: 0 auto; font-size: 1.15rem; line-height: 1.9; color: #1e293b;">
           
           <h3 style="font-size: 1.7rem; color: var(--text-primary); margin-bottom: 1.15rem;">1. The 1,000+ Client Construction Ledger Crisis</h3>
 
@@ -343,7 +355,7 @@ get_header(); ?>
       </article>
     </section>
 
-    <!-- SECTION 4: LIVE WABA PLAYGROUND -->
+    <!-- SECTION 4: LIVE PLAYGROUND -->
     <section id="playground" class="section-wrap">
       <h2 class="section-title">Live Custom Harness Playground</h2>
       <p class="section-sub">Test how our verified WABA Harness enforces 100% deterministic outputs vs how generic AI agents hallucinate.</p>
