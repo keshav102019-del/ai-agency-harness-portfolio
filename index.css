@@ -922,23 +922,70 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 0.4rem;
 }
 
-.form-input, .form-select {
+.form-input, .form-select, .faq-search-input {
   width: 100%;
   padding: 0.9rem 1.15rem;
   background: var(--bg-subtle);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px to prevent iOS auto-zoom */
   color: var(--text-primary);
   transition: var(--transition);
 }
 
-.form-input:focus, .form-select:focus {
-  outline: none;
-  border-color: var(--accent-gold);
-  background: #FFFFFF;
-  box-shadow: 0 0 0 3px var(--accent-gold-soft);
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--accent-gold);
+  color: #FFFFFF;
+}
+
+/* Mobile Table Sticky Column & Swipe Hint */
+.mobile-swipe-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .mobile-swipe-hint {
+    display: block;
+  }
+
+  table th:first-child, table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #FFFFFF !important;
+    z-index: 3;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  table th:first-child {
+    background-color: #0F172A !important;
+  }
 }
 
 /* Footer */
@@ -951,18 +998,33 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: #FFFFFF;
 }
 
-/* Responsive Scaling */
+/* Responsive Scaling & Mobile Perfection */
 @media (max-width: 1100px) {
   .header-nav {
     display: none !important;
   }
-  .main-headline { font-size: 2.8rem; }
+  .main-headline { font-size: 2.5rem; }
   .bento-grid-3col { grid-template-columns: 1fr; }
   .playground-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
+  .bento-card { padding: 1.5rem 1.25rem; }
+  .bento-grid-2col, .bento-grid-3col { gap: 1.25rem; }
   .bento-grid-2col { grid-template-columns: 1fr; }
   .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .editorial-case-study { padding: 2.5rem 1.5rem; }
+  .editorial-case-study { padding: 2.25rem 1.25rem; }
+  .modal-content { padding: 2rem 1.25rem; max-height: 85vh; width: 95%; }
+  .hero-section { padding-top: 2rem; }
+  .main-headline { font-size: 2.15rem; line-height: 1.25; }
+}
+
+@media (max-width: 480px) {
+  .top-notice-bar { padding: 0.4rem 0; }
+  .notice-flex { justify-content: center; text-align: center; }
+  .notice-flex > div:nth-child(2) { display: none; }
+  .main-headline { font-size: 1.85rem; line-height: 1.28; }
+  .proof-val { font-size: 1.8rem !important; }
+  .section-title { font-size: 2rem; }
+  .btn-cta, .btn-cta-secondary { width: 100%; justify-content: center; padding: 1rem 1.5rem !important; }
 }

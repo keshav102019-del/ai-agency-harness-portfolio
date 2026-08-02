@@ -1,16 +1,13 @@
 /* ==========================================================================
    AGENT HARNESS STUDIO — INTERACTIVE CLIENT & ENGINE CONTROLLER (PRO MAX)
-   Includes: Real-time Live WABA Playground, Scroll Ticker, Multi-Step Audit Wizard, FAQ Live Search, Copy Snippets
+   Includes: Real-time Live WABA Playground, Scroll Ticker, Multi-Step Audit Wizard, FAQ Live Search, Keyboard Support & ARIA Accessibility
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initLiveWabaPlayground();
   initAnimatedCounters();
-  initDsoRoiCalculator();
-  initInspectorTabs();
   initFaqSearchAndAccordion();
   initMultiStepAuditWizard();
-  initSampleWorkTemplates();
   initLiveTickerTime();
 });
 
@@ -28,8 +25,9 @@ function initLiveWabaPlayground() {
 
   function updatePlayground() {
     const clientName = (clientNameInput && clientNameInput.value.trim()) ? clientNameInput.value.trim() : "Rajesh Hardware Patna";
-    const amountVal = amountSlider ? parseInt(amountSlider.value).toLocaleString('en-IN') : "15,711";
-    if (amountValLabel && amountSlider) amountValLabel.textContent = `₹${amountVal}`;
+    const rawVal = amountSlider ? parseInt(amountSlider.value, 10) : 15711;
+    const amountVal = rawVal.toLocaleString('en-IN');
+    if (amountValLabel) amountValLabel.textContent = `₹${amountVal}`;
 
     const scenario = scenarioSelect.value;
 
@@ -156,122 +154,11 @@ function initAnimatedCounters() {
     }
   }
 
-  window.addEventListener('scroll', runCounters);
+  window.addEventListener('scroll', runCounters, { passive: true });
   runCounters();
 }
 
-/* 3. Enhanced DSO & ROI Capital Calculator */
-function initDsoRoiCalculator() {
-  const amountSlider = document.getElementById('calc-amount-slider');
-  const dsoSlider = document.getElementById('calc-dso-slider');
-  const amountValLabel = document.getElementById('calc-amount-label');
-  const dsoValLabel = document.getElementById('calc-dso-label');
-
-  const unlockedCashLabel = document.getElementById('calc-unlocked-cash');
-  const dsoReductionLabel = document.getElementById('calc-dso-reduced');
-  const interestSavedLabel = document.getElementById('calc-interest-saved');
-
-  function updateCalc() {
-    if (!amountSlider || !dsoSlider) return;
-
-    const amountInLakhs = parseFloat(amountSlider.value);
-    const currentDsoDays = parseInt(dsoSlider.value);
-
-    if (amountValLabel) amountValLabel.textContent = `₹${amountInLakhs.toFixed(1)} Lakhs`;
-    if (dsoValLabel) dsoValLabel.textContent = `${currentDsoDays} Days`;
-
-    const reducedDays = Math.round(currentDsoDays * 0.4);
-    const newDsoDays = currentDsoDays - reducedDays;
-    const cashUnlockedInLakhs = (amountInLakhs / currentDsoDays) * reducedDays;
-    const annualInterestSavedInRupees = (cashUnlockedInLakhs * 100000) * 0.12;
-
-    if (unlockedCashLabel) unlockedCashLabel.textContent = `₹${cashUnlockedInLakhs.toFixed(2)} Lakhs`;
-    if (dsoReductionLabel) dsoReductionLabel.textContent = `${currentDsoDays}d → ${newDsoDays}d (${reducedDays}d faster)`;
-    if (interestSavedLabel) interestSavedLabel.textContent = `₹${(annualInterestSavedInRupees / 100000).toFixed(2)} Lakhs/yr`;
-  }
-
-  if (amountSlider && dsoSlider) {
-    amountSlider.addEventListener('input', updateCalc);
-    dsoSlider.addEventListener('input', updateCalc);
-    updateCalc();
-  }
-}
-
-/* 4. Sovereign File Inspector & Snippet Copying */
-function initInspectorTabs() {
-  const tabs = document.querySelectorAll('.inspector-tab');
-  const codeDisplay = document.getElementById('inspector-code-display');
-  const copyBtn = document.getElementById('btn-copy-inspector');
-
-  if (!codeDisplay) return;
-
-  const files = {
-    'client_register.md': `/* ==========================================================================
-   client Register.md Parsing Rules (client-automation-file-skill)
-   ========================================================================== */
-
-# CORE FILTERING PROTOCOL
-1. Read all customer records from \`client Register.md\`.
-2. SKIP if client status: \`pause\`, \`Excluded\`, \`Disputed\`, \`Verification Pending\`, \`Reconciliation Pending\`, \`Temporary Pause\`.
-3. SKIP if promise date is active and date has not arrived yet.
-4. SKIP if total due amount is <= ₹0.
-5. CONFUSING DATA: Alert owner on WhatsApp and isolate corrupt record immediately.`,
-
-    'clientautomation.md': `/* ==========================================================================
-   clientautomation.md (24/7 VPS Local Execution Queue File)
-   ========================================================================== */
-
-| Client Name | Phone Number | Total Due Amount | Status |
-| :--- | :--- | :--- | :--- |
-| Rajesh Hardware | +919876543210 | ₹15,711.00 | QUEUED_BUCKET_1 |
-| Verma Agri Traders | +919812345678 | ₹42,500.00 | QUEUED_BUCKET_2 |
-| Chacha Sanoj Sah | +918051718919 | ₹89,200.00 | EXCLUDED_PAUSED_DISPUTED |`,
-
-    'contract.schema.json': `{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Stage3_Dispatch_Contract",
-  "type": "object",
-  "properties": {
-    "client_id": { "type": "string" },
-    "clean_phone": { "type": "string", "pattern": "^\\\\+91[0-9]{10}$" },
-    "total_owed": { "type": "number", "minimum": 0.01 },
-    "aging_bucket": { "type": "string", "enum": ["BUCKET_1", "BUCKET_2", "BUCKET_3"] },
-    "hitl_status": { "type": "string", "enum": ["ELIGIBLE", "PAUSED_DISPUTED"] }
-  },
-  "required": ["client_id", "clean_phone", "total_owed", "aging_bucket", "hitl_status"]
-}`
-  };
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const fileName = tab.getAttribute('data-file');
-      if (files[fileName]) {
-        codeDisplay.textContent = files[fileName];
-      }
-    });
-  });
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(codeDisplay.textContent).then(() => {
-        const origText = copyBtn.textContent;
-        copyBtn.textContent = 'Copied! ✓';
-        copyBtn.style.color = '#10B981';
-        copyBtn.style.borderColor = '#10B981';
-        setTimeout(() => {
-          copyBtn.textContent = origText;
-          copyBtn.style.color = '';
-          copyBtn.style.borderColor = '';
-        }, 2000);
-      });
-    });
-  }
-}
-
-/* 5. FAQ Accordion & Live Instant Search Filter */
+/* 3. FAQ Accordion & Live Instant Search Filter with ARIA Accessibility */
 function initFaqSearchAndAccordion() {
   const faqCards = document.querySelectorAll('.faq-card');
   const searchInput = document.getElementById('faq-search-input');
@@ -279,11 +166,20 @@ function initFaqSearchAndAccordion() {
   faqCards.forEach(card => {
     const qBtn = card.querySelector('.faq-q');
     if (!qBtn) return;
+    
+    // Set initial ARIA state
+    qBtn.setAttribute('aria-expanded', 'false');
+
     qBtn.addEventListener('click', () => {
       const isActive = card.classList.contains('active');
-      faqCards.forEach(c => c.classList.remove('active'));
+      faqCards.forEach(c => {
+        c.classList.remove('active');
+        const b = c.querySelector('.faq-q');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
       if (!isActive) {
         card.classList.add('active');
+        qBtn.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -303,7 +199,7 @@ function initFaqSearchAndAccordion() {
   }
 }
 
-/* 6. Multi-Step Founder Audit Wizard Modal */
+/* 4. Multi-Step Founder Audit Wizard Modal with Keyboard Esc Support & Focus Handling */
 function initMultiStepAuditWizard() {
   const modal = document.getElementById('founder-modal');
   if (!modal) return;
@@ -336,26 +232,47 @@ function initMultiStepAuditWizard() {
 
     stepContents.forEach(content => {
       content.classList.remove('active');
-      if (parseInt(content.getAttribute('data-step')) === currentStep) {
+      if (parseInt(content.getAttribute('data-step'), 10) === currentStep) {
         content.classList.add('active');
+        // Auto-focus first input of active step
+        const firstInput = content.querySelector('input, select');
+        if (firstInput) setTimeout(() => firstInput.focus(), 100);
       }
     });
+  }
+
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    goToStep(1);
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
   triggerBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
-      goToStep(1);
+      openModal();
     });
   });
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    closeBtn.addEventListener('click', closeModal);
   }
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.classList.remove('active');
+    if (e.target === modal) closeModal();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
   });
 
   if (btnStep1Next) {
@@ -392,49 +309,15 @@ function initMultiStepAuditWizard() {
         alert('Please enter your WhatsApp number or email.');
         return;
       }
-      alert('🎉 Audit Request Confirmed! Founder Rajesh ji will review your operational requirements and reach out within 4 hours.');
-      modal.classList.remove('active');
+      alert('🎉 Audit Request Confirmed! Founder Keshav Kumar will review your operational requirements and reach out within 4 hours.');
+      closeModal();
       form.reset();
       goToStep(1);
     });
   }
 }
 
-/* 7. Interactive Sample Work Aging Template Toggles */
-function initSampleWorkTemplates() {
-  const buttons = document.querySelectorAll('.sample-tpl-btn');
-  const display = document.getElementById('sample-tpl-display');
-  if (!display) return;
-
-  const templates = {
-    'bucket1': `
-      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 1 Template: 1–15 Days Aging]</div>
-      नमस्ते {{name}}, आपके {{amount}} रुपये के पेमेंट की तारीख निकल गई है। आप नीचे दिए गए लिंक से सीधे पेमेंट कर सकते हैं। [पेमेंट लिंक]
-    `,
-    'bucket2': `
-      <div style="color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 2 Template: 16–30 Days Aging]</div>
-      नमस्ते {{name}}, आपके खाते में {{amount}} रुपये का बकाया (outstanding) है। हमने पुराना हिसाब (ledger) चेक किया है। अगर पेमेंट करने में कोई दिक्कत आ रही है तो बताएं।
-    `,
-    'bucket3': `
-      <div style="color: var(--accent-red); font-weight: 600; margin-bottom: 0.5rem;">[Bucket 3 Template: 31+ Days Aging]</div>
-      नमस्ते {{name}}, आपके {{amount}} रुपये का पेमेंट काफी समय से पेंडिंग है। क्या बिल या सर्विस में कोई समस्या है?
-    `
-  };
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const tplKey = btn.getAttribute('data-tpl');
-      if (templates[tplKey]) {
-        display.innerHTML = templates[tplKey];
-      }
-    });
-  });
-}
-
-/* 8. Live Clock Ticker in Top Bar */
+/* 5. Live Clock Ticker in Top Bar */
 function initLiveTickerTime() {
   const timeEl = document.getElementById('live-ticker-time');
   if (!timeEl) return;
