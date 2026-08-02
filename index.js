@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initInspectorTabs();
   initFaqAccordion();
   initFounderModal();
-  initTelemetryTicker();
   initWhatsAppSimulator();
   initDsoCalculator();
 });
@@ -20,8 +19,8 @@ function initWhatsAppSimulator() {
   const scenarios = {
     'flaky': `
       <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
-      <div class="chat-bubble chat-out" style="background: rgba(248, 113, 113, 0.08); border: 1px solid var(--border-red); color: var(--accent-red);">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
-      <div class="chat-bubble chat-in" style="color: #f87171;">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
+      <div class="chat-bubble chat-out" style="background: rgba(220, 38, 38, 0.08); border: 1px solid var(--border-red); color: var(--accent-red);">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
+      <div class="chat-bubble chat-in" style="color: var(--accent-red);">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
     `,
     'waba_harness': `
       <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
@@ -31,12 +30,12 @@ Due Date: Aug 5, 2026
 Verified Payment Link: https://pay.jmbt.in/inv_8492
 
 Replies are anchored to your official ledger.</div>
-      <div class="chat-bubble chat-in" style="color: #34d399;">✅ SUCCESS: 100% Schema Validated | 0% Numeric Error | Verified WABA Template.</div>
+      <div class="chat-bubble chat-in" style="color: #059669;">✅ SUCCESS: 100% Schema Validated | 0% Numeric Error | Verified WABA Template.</div>
     `,
     'disputed': `
       <div class="chat-bubble chat-in">We received a damaged box in invoice #8492. We are holding payment until replacement arrives.</div>
-      <div class="chat-bubble chat-out" style="background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); color: var(--accent-gold);">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
-      <div class="chat-bubble chat-in" style="color: #fbbf24;">⚡ HITL PAUSE: Client #92 flagged in SOUL.md. 0 automated spam messages sent.</div>
+      <div class="chat-bubble chat-out" style="background: rgba(180, 131, 70, 0.08); border: 1px solid var(--border-gold); color: var(--accent-gold);">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
+      <div class="chat-bubble chat-in" style="color: #b48346;">⚡ HITL PAUSE: Client #92 flagged in SOUL.md. 0 automated spam messages sent.</div>
     `
   };
 
@@ -203,24 +202,4 @@ function initFounderModal() {
       form.reset();
     });
   }
-}
-
-/* 6. Live Telemetry Ticker */
-function initTelemetryTicker() {
-  const textEl = document.getElementById('live-ticker');
-  if (!textEl) return;
-
-  const items = [
-    "[Meta WABA Cloud API] Dispatched ledger_personal_remind -> Status: DELIVERED (200 OK)",
-    "[ICM Protocol] Read AGENTS.md & SOUL.md -> 0% Numeric Error Gate Validated",
-    "[Smart HITL] Client #92 (Chacha Sanoj Sah) PAUSED -> Active Dispute Flagged",
-    "[System Lock] Lock 'dispatch_run_8492' verified -> 0 Duplicate Messages Sent",
-    "[Telemetry Reconcile] ₹23,422.00 payment webhook received -> Client ledger updated"
-  ];
-
-  let idx = 0;
-  setInterval(() => {
-    idx = (idx + 1) % items.length;
-    textEl.textContent = items[idx];
-  }, 4500);
 }
