@@ -1,5 +1,5 @@
 /* ==========================================================================
-   10/10 WORLD-CLASS INTERACTIVE WIDGET CONTROLLERS
+   10/10 WORLD-CLASS INTERACTIVE WIDGET CONTROLLERS (SAFE NULL-GUARDED)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function initWhatsAppSimulator() {
   const simBtns = document.querySelectorAll('.sim-btn');
   const chatDisplay = document.getElementById('chat-simulator-display');
+  if (!chatDisplay) return;
 
   const scenarios = {
     'flaky': `
       <div class="chat-bubble chat-in">Hi, I want to check my pending invoice balance for Acme Traders.</div>
-      <div class="chat-bubble chat-out" style="background: #7f1d1d;">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
+      <div class="chat-bubble chat-out" style="background: rgba(248, 113, 113, 0.08); border: 1px solid var(--border-red); color: var(--accent-red);">[Generic AI Bot] Sure! Your total owed is ₹4,500.00. We can also give you a special 40% discount if you pay today! Click here: http://fake-link.com</div>
       <div class="chat-bubble chat-in" style="color: #f87171;">⚠️ ERROR: Customer replied "I already paid yesterday! Why are you asking again and offering false discounts?" -> Customer angry, Meta Quality Rating tanked.</div>
     `,
     'waba_harness': `
@@ -34,7 +35,7 @@ Replies are anchored to your official ledger.</div>
     `,
     'disputed': `
       <div class="chat-bubble chat-in">We received a damaged box in invoice #8492. We are holding payment until replacement arrives.</div>
-      <div class="chat-bubble chat-out" style="background: #1e293b;">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
+      <div class="chat-bubble chat-out" style="background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); color: var(--accent-gold);">[Smart HITL Engine] We have logged your dispute regarding damaged box on invoice #8492. Automated payment reminders are now PAUSED. Our owner Rajesh ji has been notified for manual review.</div>
       <div class="chat-bubble chat-in" style="color: #fbbf24;">⚡ HITL PAUSE: Client #92 flagged in SOUL.md. 0 automated spam messages sent.</div>
     `
   };
@@ -67,18 +68,15 @@ function initDsoCalculator() {
     const amountInLakhs = parseFloat(amountSlider.value);
     const currentDsoDays = parseInt(dsoSlider.value);
 
-    amountValLabel.textContent = `₹${amountInLakhs.toFixed(1)} Lakhs`;
-    dsoValLabel.textContent = `${currentDsoDays} Days`;
+    if (amountValLabel) amountValLabel.textContent = `₹${amountInLakhs.toFixed(1)} Lakhs`;
+    if (dsoValLabel) dsoValLabel.textContent = `${currentDsoDays} Days`;
 
-    // Calculation logic: Harness reduces DSO by average 40%
     const reducedDays = Math.round(currentDsoDays * 0.4);
     const newDsoDays = currentDsoDays - reducedDays;
-    
-    // Cash unlocked = (Amount / DSO) * Reduced Days
     const cashUnlockedInLakhs = (amountInLakhs / currentDsoDays) * reducedDays;
 
-    unlockedCashLabel.textContent = `₹${cashUnlockedInLakhs.toFixed(2)} Lakhs`;
-    dsoReductionLabel.textContent = `${currentDsoDays}d → ${newDsoDays}d (${reducedDays} days faster)`;
+    if (unlockedCashLabel) unlockedCashLabel.textContent = `₹${cashUnlockedInLakhs.toFixed(2)} Lakhs`;
+    if (dsoReductionLabel) dsoReductionLabel.textContent = `${currentDsoDays}d → ${newDsoDays}d (${reducedDays} days faster)`;
   }
 
   if (amountSlider && dsoSlider) {
@@ -92,6 +90,7 @@ function initDsoCalculator() {
 function initInspectorTabs() {
   const tabs = document.querySelectorAll('.inspector-tab');
   const codeDisplay = document.getElementById('inspector-code-display');
+  if (!codeDisplay) return;
 
   const files = {
     'AGENTS.md': `/* ==========================================================================
@@ -157,6 +156,7 @@ function initFaqAccordion() {
 
   faqCards.forEach(card => {
     const qBtn = card.querySelector('.faq-q');
+    if (!qBtn) return;
     qBtn.addEventListener('click', () => {
       const isActive = card.classList.contains('active');
       faqCards.forEach(c => c.classList.remove('active'));
@@ -170,6 +170,8 @@ function initFaqAccordion() {
 /* 5. Founder Booking Modal */
 function initFounderModal() {
   const modal = document.getElementById('founder-modal');
+  if (!modal) return;
+
   const triggerBtns = document.querySelectorAll('.open-modal');
   const closeBtn = document.querySelector('.modal-close');
   const form = document.getElementById('founder-audit-form');
@@ -206,6 +208,8 @@ function initFounderModal() {
 /* 6. Live Telemetry Ticker */
 function initTelemetryTicker() {
   const textEl = document.getElementById('live-ticker');
+  if (!textEl) return;
+
   const items = [
     "[Meta WABA Cloud API] Dispatched ledger_personal_remind -> Status: DELIVERED (200 OK)",
     "[ICM Protocol] Read AGENTS.md & SOUL.md -> 0% Numeric Error Gate Validated",
@@ -215,10 +219,8 @@ function initTelemetryTicker() {
   ];
 
   let idx = 0;
-  if (textEl) {
-    setInterval(() => {
-      idx = (idx + 1) % items.length;
-      textEl.textContent = items[idx];
-    }, 4500);
-  }
+  setInterval(() => {
+    idx = (idx + 1) % items.length;
+    textEl.textContent = items[idx];
+  }, 4500);
 }

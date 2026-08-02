@@ -1,13 +1,14 @@
 /* ==========================================================================
    ULTRA-PREMIUM MINIMALIST DESIGN SYSTEM
    Style: Swiss/Nordic Minimalist Obsidian & Champagne Gold Architecture
+   Specification: DESIGN.md Compliant
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-  --bg-dark: #0a0a0c;
-  --bg-surface: #111114;
-  --bg-card: rgba(17, 17, 20, 0.45);
+  --bg-dark: #080A0F;
+  --bg-surface: #11141C;
+  --bg-card: rgba(17, 20, 28, 0.5);
   --bg-terminal: #050507;
   
   --border-color: rgba(255, 255, 255, 0.05);
@@ -21,9 +22,9 @@
   --accent-emerald-soft: rgba(52, 211, 153, 0.08);
   --accent-red: #f87171;
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
   
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
@@ -152,7 +153,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .editorial-header {
   border-bottom: 1px solid var(--border-color);
   padding: 1.25rem 0;
-  background: rgba(10, 10, 12, 0.92);
+  background: rgba(8, 10, 15, 0.92);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -179,7 +180,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 34px;
   height: 34px;
   background: var(--accent-gold);
-  color: #0a0a0c;
+  color: #080a0f;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -189,7 +190,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .btn-cta {
   background: var(--accent-gold);
-  color: #0a0a0c;
+  color: #080a0f;
   font-weight: 700;
   padding: 0.8rem 1.6rem;
   border-radius: var(--radius-sm);
@@ -205,7 +206,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Hero Section */
 .hero-section {
-  padding: 7rem 0 4.5rem;
+  padding: 7.5rem 0;
   text-align: center;
 }
 
@@ -270,7 +271,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
 }
 
-/* Section Wrappers with Architectural Whitespace */
+/* Section Wrappers with Architectural Whitespace (7.5rem) */
 .section-wrap {
   padding: 7.5rem 0;
   border-bottom: 1px solid var(--border-color);
